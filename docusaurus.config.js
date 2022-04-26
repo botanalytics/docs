@@ -48,7 +48,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Basics',
           },
           {
             href: 'https://github.com/facebook/docusaurus',
@@ -64,8 +64,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Basics',
+                to: '/docs/concepts',
               },
             ],
           },
@@ -77,12 +77,12 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Gitter',
+                href: 'https://gitter.im/botanalytics/community',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/botanalyticsco',
               },
             ],
           },
@@ -90,8 +90,12 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'To Suggest Edits',
+                href: 'https://github.com/botanalytics/docs',
+              },
+              {
+                label: 'Other Repositories',
+                href: 'https://github.com/botanalytics/',
               },
             ],
           },
