@@ -46,12 +46,30 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'basics/intro',
             position: 'left',
             label: 'Basics',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            type: 'doc',
+            docId: 'integration/overview',
+            position: 'left',
+            label: 'Integration',
+          },
+          {
+            type: 'doc',
+            docId: 'metrics/intro',
+            position: 'left',
+            label: 'Metrics',
+          },
+          {
+            type: 'doc',
+            docId: 'support',
+            position: 'left',
+            label: 'Support',
+          },
+          {
+            href: 'https://github.com/botanalytics/docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -65,7 +83,7 @@ const config = {
             items: [
               {
                 label: 'Basics',
-                to: '/docs/concepts',
+                to: '/docs/basics/intro',
               },
             ],
           },

@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Overview
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This section is designed to guide you through setting Botanalytics and help you get the most out of the platform.
 
 ## Getting Started
 
