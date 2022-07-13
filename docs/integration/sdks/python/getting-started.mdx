@@ -1,0 +1,199 @@
+---
+sidebar_position: 1
+---
+
+import V3Warning from '@site/src/components/V3Warning.mdx';
+import PipWarning from '@site/src/components/PipWarning.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Getting Started
+
+This section describes how to use the Botanalytics Python SDK for your project.
+
+<V3Warning />
+
+## Prerequisites
+
+* A Python project with python version 3.7 or above.
+
+## Quick Installation
+
+#### Isolate your python project using a virtual environment.
+
+<Tabs>
+<TabItem value="ubuntu" label="Ubuntu">
+
+Create a new virtual environment by choosing a Python interpreter and making a ./venv directory to hold it:
+
+```bash
+python3 -m venv ./venv
+```
+
+Activate the virtual environment:
+
+```bash
+source ./venv/bin/activate
+```
+
+Install Botanalytics Python SDK using pip (requires Python 3.7, or above).
+
+```bash
+pip3 install -U --user pip && pip3 install botanalytics==3.0.0
+```
+
+<PipWarning />
+</TabItem>
+
+<TabItem value="macos" label="macOS">
+
+Create a new virtual environment by choosing a Python interpreter and making a ./venv directory to hold it:
+
+```bash
+python3 -m venv ./venv
+```
+
+Activate the virtual environment:
+
+```bash
+source ./venv/bin/activate
+```
+
+Install Botanalytics Python SDK using pip (requires Python 3.7, or above).
+
+```bash
+pip3 install -U --user pip && pip3 install botanalytics==3.0.0
+```
+
+<PipWarning />
+</TabItem>
+
+<TabItem value="windows" label="Windows">
+
+Create a new virtual environment by choosing a Python interpreter and making a .\\venv directory to hold it:
+
+```bash
+C:\> python3 -m venv ./venv
+```
+
+Activate the virtual environment:
+
+```bash
+C:\> .\venv\Scripts\activate
+```
+
+Install Botanalytics Python SDK using pip (requires Python 3.7, or above).
+
+```bash
+pip3 install -U --user pip && pip3 install botanalytics==3.0.0
+```
+<PipWarning />
+</TabItem>
+
+</Tabs>
+
+## Step-by-step Installation Guide
+
+### 1. Python Environment Setup
+Check if your Python environment is already configured:
+```bash
+python3 --version
+pip3 --version
+```
+
+If these packages are already installed, these commands should display version numbers for each step, and you can skip to the next step.
+
+Otherwise, proceed with the instructions below to install them.
+
+<Tabs>
+<TabItem value="ubuntu" label="Ubuntu">
+Fetch the relevant packages using apt, and install virtualenv using pip.
+
+```bash
+sudo apt update
+sudo apt install python3-dev python3-pip
+```
+</TabItem>
+<TabItem value="macos" label="macOS">
+Install the <a target="\_blank" href="https://brew.sh/">Homebrew</a> package manager if you haven't already.
+
+
+Once you're done, you can install Python3.
+```bash
+brew update
+brew install python@3.7
+```
+</TabItem>
+<TabItem value="windows" label="Windows">
+Make sure the Microsoft VC++ Compiler is installed, so python can compile any dependencies.
+
+You can get the compiler from <a target="\_blank"  href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio</a>.
+
+Download the installer and select VC++ Build tools in the list. Install <a target="\_blank" href="https://www.python.org/downloads/windows/">Python 3</a> (64-bit version) for Windows.
+
+```bash
+C:\> pip3 install -U pip
+```
+</TabItem>
+</Tabs>
+
+### 2. Virtual Environment Setup
+This step is optional, but we strongly recommend isolating python projects using virtual environments.
+
+Tools like <a target="\_blank" href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> , <a target="\_blank" href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a> and <a target="\_blank" href="https://pipenv.pypa.io/en/latest/">pipenv</a> provide isolated Python environments, which are cleaner than installing packages system-wide (as they prevent dependency conflicts). They also let you install packages without root privileges.
+<Tabs>
+<TabItem value="ubuntu" label="Ubuntu">
+Create a new virtual environment by choosing a Python interpreter and making a ./venv directory to hold it:
+
+```bash
+python3 -m venv ./venv
+```
+Activate the virtual environment:
+
+```bash
+source ./venv/bin/activate
+```
+</TabItem>
+<TabItem value="macos" label="macOS">
+Create a new virtual environment by choosing a Python interpreter and making a ./venv directory to hold it:
+
+```bash
+python3 -m venv ./venv
+```
+Activate the virtual environment:
+
+```bash
+source ./venv/bin/activate
+```
+</TabItem>
+<TabItem value="windows" label="Windows">
+Create a new virtual environment by choosing a Python interpreter and making a .\\venv directory to hold it:
+
+```bash
+C:\> python3 -m venv ./venv
+```
+Activate the virtual environment:
+
+```bash
+C:\> .\venv\Scripts\activate
+```
+
+</TabItem>
+</Tabs>
+
+### 3. Install Botanalytics Python SDK
+<Tabs>
+<TabItem value="all" label="Ubuntu/macOS/Windows">
+First make sure your pip version is up to date:
+
+```bash
+pip3 install -U pip
+```
+
+To install Botanalytics Python SDK:
+
+```bash
+pip3 install botanalytics==3.0.0
+```
+</TabItem>
+</Tabs>

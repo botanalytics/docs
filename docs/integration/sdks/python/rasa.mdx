@@ -1,0 +1,82 @@
+import V3Warning from '@site/src/components/V3Warning.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+# Rasa
+
+This section describes how to integrate a Rasa with Botanalytics.
+
+<V3Warning />
+
+## Integration
+
+Integrating Botanalytics into your Rasa application is quick and easy.
+
+### Integration Options
+
+<Tabs>
+<TabItem value="endpoints" label="Endpoints.yml">
+
+Add Botanalytics to your endpoints.yml
+
+Add a line to your endpoints.yml so that rasa-core is configured to send events to Botanalytics:
+
+```yaml
+event_broker:
+  type: botanalytics.rasa.Rasa
+  api_key: BOTANALYTICS_API_KEY
+```
+
+
+</TabItem>
+
+<TabItem value="eventbroker" label="Event Broker">
+
+<a target="\_blank" href="https://rasa.com/docs/rasa/api/event-brokers/">Rasa Event Brokers</a> api produces a message onto a message broker, which is then used to consume the event. In the message broker consumer code, import our python library:
+
+
+Include Botanalytics
+
+```py
+from botanalytics.rasa import Rasa
+```
+
+Then, use our library to publish events as part of your consumer code. As suggested below, call the Botanalytics rasa code with your api key in place of BOTANALYTICS_API_KEY. The example code below is for consuming rabbitmq messages via <a target="\_blank" href="https://pika.readthedocs.io/en/stable/">pika</a>.
+
+
+Consume events with Botanalytics
+
+```py
+def _callback(ch, method, properties, body):
+  event = json.loads(body)
+  db = Rasa(api_key=BOTANALYTICS_API_KEY)
+  db.publish(event)
+```
+
+</TabItem>
+
+</Tabs>
+
+### Configuration options
+
+| Option        				| Required				| Default      	| Description | Environment Variable
+| -------- 				| ------------ 			| ------- 				| ------	    | -----
+| `apiKey`    | Yes						| `Has no default`          |  API key that is provided when a Rasa channel is added to a project. | ```BA_API_KEY```
+| `debug`    | No						| `False`           |  Enables logging. Set this to `true` or `True` to enable. | ```BA_DEBUG```
+| `baseUrl`    | No						| `https://api.botanalytics.co`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team. | ```BA_BASE_URL```
+| `is_async`   | No						| `False`       							    |  Whether client should use async workers. Set this to `true` or `True` to enable. | ```BA_IS_ASYNC```
+| `thread_workers`   | No						| `cpu count * 2`       							    |  The number of thread workers for the async client | ```BA_THREAD_WORKERS```
+
+
+### Additional environment variables/options
+| Name        				| Required				| Default      	| Description | Environment Variable
+| -------- 				| ------------ 			| ------- 				| ------	    | -----
+| Could only be set via environment variable.    | No						| `INFO`          |  Log level for the logger. Could be set one of following options `TRACE`, `DEBUG`, `INFO`, `SUCCESS`, `WARNING`, `ERROR`, `CRITICAL`.  | ```BA_LOG_LEVEL```
+| `request_retry_limit`    | No						| `10`           |  Request retry limit for the client | ```BA_REQUEST_RETRY_LIMIT```
+| `request_timeout`    | No						| `30000`           | Request timeout for the client  | ```BA_REQUEST_TIMEOUT```
+
+
+## Next Steps
+
+* See [examples for Rasa](https://github.com/botanalytics/python-sdk-examples/tree/master/rasa/helpdesk-assistant)
