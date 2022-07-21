@@ -35,7 +35,7 @@ On Samsung Bixby Developer Console, open the Configuration & Secrets page under 
 
 | Name        				| Required				| Default      							| Description
 | ----------- 				| ------------ 			| ------------ 							| -----
-| `botanalytics.baseUrl`    | No						| `https://api.botanalytics.co`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team.
+| `botanalytics.baseUrl`    | No						| `https://api.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team.
 | `botanalytics.failFast`   | No						| `no`       							    | Whether to fail when an exception is encountered when sending data to Botanalytics. To enable this feature, set this to `true` or `yes`.
 
 ### Log interactions with your capsule
@@ -52,7 +52,7 @@ Log input by passing action or intent name:
 logInput('findCapital', input);
 ```
 
-:::info 
+:::info
 
 In JavaScript Runtime Version 2, functions instead receive a single parameter, an object with key/value pairs whose keys correspond to the input keys in the action. `logOutput` method returns the provided output, so you can log and return the value in a single statement.
 
