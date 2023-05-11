@@ -6,15 +6,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Botanalytics Documentation',
+  title: 'Botanalytics Private Beta Documentation',
   tagline: 'Explore our tutorials and examples to integrate Botanalytics and get the most out of it',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://docs.beta.botanalytics.co',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'botanalytics', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   presets: [
     [
