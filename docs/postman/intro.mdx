@@ -1,0 +1,50 @@
+---
+sidebar_position: 6
+---
+
+# Explore Botanalytics APIs with Postman
+
+
+When you're working on a custom integration with Botanalytics, odds are that you'll use our HTTP APIs. These APIs can be accessed programmatically but they can also be incredibly useful for manual debugging. This process of manual debugging can be very time-consuming though. To help developers interact with our Botanalytics APIs we've recently created **[a workspace on Postman](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/overview)** that comes with all of our API endpoints pre-filled.
+
+
+In this blog post, we'll explain what this will enable you to do.
+
+
+## What is Postman?
+
+Postman is a platform that makes it very easy to communicate with APIs. It allows you to host workspaces that contain collections of pre-configured API endpoints in a convenient user interface. These workspaces are designed to be customizable. It’s very easy to re-use requests and to switch from a local deployment to a production environment.
+
+
+## How do I get started?
+
+To get started, go to **[the Botanalytics workspace on Postman.](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/overview)** When you go there, you should see an interface that looks like this:
+
+![Postman Botanalytics workspace look like this](@site/static/img/postman/look-like.png)
+
+
+This is the Botanalytics workspace. At the time of writing, it contains one API collection. This API can be explored and you can use the predefined endpoints to make a request. There are five channel request examples here in this collection and different message type payloads.
+
+![Channels](@site/static/img/postman/channels.png)
+
+
+The screenshot below shows an example of a request going to the `/messages` endpoint.
+
+![Messages endpoint example request](@site/static/img/postman/messages-example.png)
+
+
+One of the best features of Postman is that it allows you to change pre-defined variables, such as the `api-host` variable. Since all the API definitions make use of this variable, you can switch between deployments with a **[single click.](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/globals)**
+
+![Globals environment](@site/static/img/postman/globals.png)
+
+You’re able to use the Botanalytics workspace as a starting point to bootstrap custom environments to work from. This can be a convenient way to separate the production from the development environment. 
+
+Also, this is where you could set `api-authentication-token` environment variable which is used for authorization of the requests on our end for `/messages` endpoint REST API. It's a **[JWT](https://jwt.io/introduction)** token provided when you add a channel to your project.
+
+![Universal channel environment](@site/static/img/postman/custom-environment.png)
+
+## Try it out!
+
+Feel free to give **[the Botanalytics workspace on Postman.](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/overview)** a try! Checkout out **[the Botanalytics Postman documentation.](https://www.postman.com/botanalytics/documentation/23965665-167c8511-a61f-4ceb-88bf-bedfbf10d226?entity=&branch=&version=)** We hope it makes it easier to explore the Botanalytics REST API and we’re also keen to hear any feedback that you might have on **[our feedback forum.](https://feedback.beta.botanalytics.co/)**
+
+Happy hacking!

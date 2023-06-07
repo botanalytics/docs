@@ -6,17 +6,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Botanalytics Private Beta Documentation',
-  tagline: 'Explore our tutorials and examples to integrate Botanalytics and get the most out of it',
+  title: 'Private Beta Documentation',
+  tagline: "Welcome! Here you can access the complete documentation for the Botanalytics's Private Beta Product.",
   url: 'https://docs.beta.botanalytics.co',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://cdn.botanalytics.co/media/ui/dashboard/icon@3x.png',
   organizationName: 'botanalytics', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
+  onBrokenLinks: 'ignore',
 
   presets: [
     [
@@ -26,7 +27,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/botanalytics/docs/tree/master/',
         },  
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -71,6 +72,12 @@ const config = {
             label: 'Support',
           },
           {
+            type: 'doc',
+            docId: 'postman/intro',
+            position: 'left',
+            label: 'Postman'
+          },
+          {
             href: 'https://github.com/botanalytics/docs',
             label: 'GitHub',
             position: 'right',
@@ -93,8 +100,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Slack',
+                href: 'https://join.slack.com/t/botanalytics-family/shared_invite/zt-1uzzs7rwk-axtZDb5~ddeNGggpxnXKYA',
               },
               {
                 label: 'Gitter',
@@ -104,6 +111,10 @@ const config = {
                 label: 'Twitter',
                 href: 'https://twitter.com/botanalyticsco',
               },
+              {
+                label: 'Frill',
+                href: 'https://feedback.beta.botanalytics.co'
+              }
             ],
           },
           {
@@ -120,11 +131,14 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Botanalytics, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Botanalytics, Inc. | <a target="_blank" href="https://botanalytics.co/terms" style="color: #ebedf0;
+    line-height: 2">Terms of Service</a> | <a target="_blank" href="https://botanalytics.co/privacy" style="color: #ebedf0;
+    line-height: 2">Privacy Policy</a> `,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['powershell'],
       },
     }),
 };

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="66px" height="66px" viewBox="0 0 66 66" version="1.1">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>03</title>
+    <desc>Created with Sketch.</desc>
+    <defs/>
+    <g id="Slice" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="top" transform="translate(-175.000000, -350.000000)">
+            <g id="03" transform="translate(175.000000, 350.000000)">
+                <circle id="Oval-Copy-3" fill="#0367A1" cx="33" cy="33" r="33"/>
+                <g id="alexa" transform="translate(18.000000, 17.000000)" fill-rule="nonzero" fill="#FFFFFF">
+                    <path d="M15.5,0 C6.94130435,0 0,7.07877651 0,15.6549865 C0,24.2311965 6.94130435,31.309973 15.5,31.309973 C24.0586957,31.309973 31,24.2311965 31,15.6549865 C31,7.07877651 24.0586957,0 15.5,0 Z M13.0126731,31.0512129 L13.0126731,27.9885445 C13.0126731,26.8995957 12.3395405,25.8787062 11.3298416,25.4703504 C7.56029899,23.8369272 4.8677686,20.0256065 4.8677686,15.601752 C4.8677686,9.74865229 9.57969679,4.91644205 15.4359504,4.91644205 C21.292204,4.91644205 26.0041322,9.74865229 26.0041322,15.601752 C26.0041322,22.5438005 20.6863847,29.0774933 13.0126731,31.0512129 Z" id="Shape"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

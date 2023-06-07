@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Basics',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/basics.svg').default,
     description: (
       <>
         Learn about the concepts, features and others to get the most out of the Botanalytics platform.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Integration',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/integration.svg').default,
     description: (
       <>
         No matter which messaging or voice channels you use, we provide an integration path for you.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Community',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/community.svg').default,
     description: (
       <>
         Join and be a part of Botanalytics community by sharing your feedback, suggestions or your favorite pet photos.

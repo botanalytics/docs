@@ -8,6 +8,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  max-height: 540px !important;
 }
 
 @media screen and (max-width: 996px) {
@@ -16,8 +17,251 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.right{
+    float:right
+}
+.clear:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.container{
+    width:1200px;
+    margin:0 auto
+}
+.relative{
+    position:relative
+}
+#headAction #rotater span{
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+    -khtml-border-radius:100%;
+    -o-border-radius:100%;
+    -ms-border-radius:100%
+}
+.backgroundBlue{
+    background:#053177!important;
+    background-image:linear-gradient(-225deg,rgba(0,224,255,0) 0,rgba(0,224,255,.5) 100%)!important;
+    position:relative!important
+}
+header{
+    padding:37px 0
+}
+#headAction{
+    position:relative;
+    width:350px;
+    height:350px;
+    margin:0 auto
+}
+#headAction .pulseStyle{
+    display:block;
+    border-radius:50%;
+    border:1px solid #4190b4;
+    position:absolute;
+    z-index:1;
+    top:0;
+    left:0;
+    width:350px;
+    height:350px;
+    top:0
+}
+#headAction .pulseStyle.pulse01,#headAction .pulseStyle.pulse02,#headAction .pulseStyle.pulse03{
+    top:-60px;
+    left:-60px;
+    width:470px;
+    height:470px
+}
+#headAction .pulseStyle.pulse04{
+    top:-60px;
+    left:-60px;
+    width:470px;
+    height:470px
+}
+#headAction .pulseStyle.pulseStatic{
+    border-color:#4190b4
+}
+#headAction .pulse01,#headAction .pulse02,#headAction .pulse03{
+    animation:pulse 6s infinite
+}
+#headAction .pulse02{
+    animation-delay:2s
+}
+#headAction .pulse03{
+    animation-delay:4s
+}
+#headAction #bubbleGeneral{
+    text-align:center;
+    z-index:999
+}
+#headAction #bubbleGeneral .bubbleLogo{
+    padding:123px 0
+}
+#headAction #bubbleGeneral>img{
+    width:90px;
+    height:103px
+}
+#headAction #rotater{
+    position:absolute;
+    left:0;
+    width:350px;
+    height:350px;
+    -webkit-animation:rotation 40s infinite linear
+}
+#headAction #rotater .relative{
+    height:350px
+}
+#headAction #rotater span{
+    border:2px solid #1b7fb2;
+    width:70px;
+    height:70px;
+    display:block;
+    position:relative;
+    position:absolute;
+    -webkit-animation:rotationReverse 40s infinite linear
+}
+#headAction #rotater span.small{
+    width:54px;
+    height:54px
+}
+#headAction #rotater span:nth-child(1){
+    top:-33px;
+    left:143px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(2){
+    right:-33px;
+    top:143px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(3){
+    left:-33px;
+    top:143px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(4){
+    bottom:-33px;
+    left:143px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(5){
+    top:-20px;
+    left:-20px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(6){
+    right:-20px;
+    top:-20px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(7){
+    right:-20px;
+    bottom:-20px;
+    background:#0366a1
+}
+#headAction #rotater span:nth-child(8){
+    bottom:-20px;
+    left:-20px;
+    background:#0366a1
+}
+#headAction #rotater span img{
+    height:66px;
+    width:66px;
+    position:absolute;
+    left:0;
+    top:0
+}
+#headAction #rotater span.small img{
+    height:50px;
+    width:50px
+}
+.indexHead #headAction{
+    margin:150px 70px 240px 0
+}
+
+@keyframes pulse{
+    from{
+        border-color:rgba(255,255,255,.2);
+        -webkit-transform:scale(1)
+    }
+    to{
+        border-color:rgba(255,255,255,0);
+        -webkit-transform:scale(2)
+    }
+}
+
+@keyframes pulse105{
+    0%{
+        -webkit-transform:scale(1)
+    }
+    50%{
+        -webkit-transform:scale(1.05)
+    }
+    100%{
+        -webkit-transform:scale(1)
+    }
+}
+
+@keyframes pulse103{
+    0%{
+        -webkit-transform:scale(1)
+    }
+    50%{
+        -webkit-transform:scale(1.03)
+    }
+    100%{
+        -webkit-transform:scale(1)
+    }
+}
+@keyframes pulse102{
+    0%{
+        -webkit-transform:scale(1)
+    }
+    50%{
+        -webkit-transform:scale(1.02)
+    }
+    100%{
+        -webkit-transform:scale(1)
+    }
+}
+@keyframes toptoBottom{
+    0%{
+        top:60px
+    }
+    50%{
+        top:70px
+    }
+    100%{
+        top:60px
+    }
+}
+@keyframes rotation{
+    from{
+        -webkit-transform:rotate(0)
+    }
+    to{
+        -webkit-transform:rotate(359deg)
+    }
+}
+@keyframes rotationReverse{
+    from{
+        -webkit-transform:rotate(359deg)
+    }
+    to{
+        -webkit-transform:rotate(0)
+    }
+}
+@media (max-width :1224px){
+    body{
+        min-width:990px
+    }
+    .container{
+        width:990px
+    }
+}
+b{
+    font-weight:700
 }
