@@ -1,0 +1,294 @@
+---
+sidebar_position: 2
+sidebar_label: Outputs
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Samsung Bixby Outputs
+
+<RunInPostmanButton/>
+
+## Output message with userId
+
+The output message type represents a message sent by the virtual agent in a text format. It can contain plain text or various formatting options.
+
+Please refer to **[output objects](https://bixbydevelopers.com/dev/docs/dev-guide/developers/actions.js-actions#passing-user-context-information)** in Samsung Bixby's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+           
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents an individual message.
+    - `timestamp` (number): The timestamp (in milliseconds) of the output.
+
+
+:::info 
+
+Please note that the `message object` within `messages` array above has the Bixby's native output format plus `timestamp` field which is required for each message object.
+
+:::
+
+### Example of single message payload in JSON format
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "timestamp": 1458692752478,
+        "output": "Output",
+        "action": "mail-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "userId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "timestamp": 1458692752478,
+        "output": "Output",
+        "action": "mail-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "userId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    },
+    {
+      "message": {
+        "timestamp": 1458692752600,
+        "output": "Output",
+        "action": "message-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "userId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    }
+  ]
+}
+```
+
+## Output message with bixbyUserId
+
+
+The output message type represents a message sent by the virtual agent in a text format. It can contain plain text or various formatting options.
+
+
+### Example of single message payload in JSON format
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "timestamp": 1458692752478,
+        "output": "Output",
+        "action": "mail-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "bixbyUserId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "timestamp": 1458692752478,
+        "output": "Output",
+        "action": "mail-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "bixbyUserId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    },
+    {
+      "message": {
+        "timestamp": 1458692752600,
+        "output": "Output",
+        "action": "message-action",
+        "$vivContext": {
+            "canTypeId": "bixby-mobile-en-US",
+            "device": "bixby-mobile",
+            "bixbyUserId": "u1",
+            "locale": "en-US",
+            "timezone": "America/Los_Angeles",
+            "testToday": null,
+            "accessToken": null,
+            "svcId": null,
+            "rampcode": null,
+            "conversationId": null,
+            "requestId": null,
+            "sessionId": "0a8ff565bfbace92f7739f521824d15816f056588af43205415984598d0aebfd",
+            "handsFree": false,
+            "storeCountry": "",
+            "deviceModel": "",
+            "productCode": null,
+            "screenLocked": false,
+            "utterance": null,
+            "clientAppId": null,
+            "clientAppVersion": null,
+            "drivingMode": false,
+            "grantedPermissions": {},
+            "is24HourFormat": false,
+            "bixbyUserId": null,
+            "allowLockScreenExecution": false
+        }
+      }
+    }
+  ]
+}
+```       

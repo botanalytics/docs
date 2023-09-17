@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 # Rasa
 
-This section describes how to integrate a Rasa with Botanalytics.
+This section describes how to integrate a Rasa integration channel with Botanalytics.
 
 <V3Warning />
 
@@ -62,9 +62,9 @@ def _callback(ch, method, properties, body):
 
 | Option        				| Required				| Default      	| Description | Environment Variable
 | -------- 				| ------------ 			| ------- 				| ------	    | -----
-| `apiKey`    | Yes						| `Has no default`          |  API key that is provided when a Rasa channel is added to a project. | ```BA_API_KEY```
+| `api_key`    | Yes						| `Has no default`          |  API key that is provided when a Rasa channel is added to a project. | ```BA_API_KEY```
 | `debug`    | No						| `False`           |  Enables logging. Set this to `true` or `True` to enable. | ```BA_DEBUG```
-| `baseUrl`    | No						| `https://api.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team. | ```BA_BASE_URL```
+| `base_url`    | No						| `https://api.beta.botanalytics.co/v2`           | Base URL to be used for sending requests. Do not change this unless instructed by the Botanalytics team. | ```BA_BASE_URL```
 | `is_async`   | No						| `False`       							    |  Whether client should use async workers. Set this to `true` or `True` to enable. | ```BA_IS_ASYNC```
 | `thread_workers`   | No						| `cpu count * 2`       							    |  The number of thread workers for the async client | ```BA_THREAD_WORKERS```
 

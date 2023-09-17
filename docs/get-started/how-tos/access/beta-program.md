@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+sidebar_label: Joining the Beta Program
+---
+
+
+# Joining the Beta Program
+
+### Go to **[the Botanalytics Beta Website](https://beta.botanalytics.co/)**
+
+
+### Enter Your Email
+
+On the beta waitlist page shown below, you will be prompted to type in your email address in the provided field.
+
+![Beta Page](@site/static/img/beta-website.png)
+
+Double-check your email address for accuracy.
+
+Click the "Join the Waitlist" button to submit your email and request to join the beta program.
+
+### Confirmation Message
+
+After submitting your email to join the waitlist, you will see a message confirming that you are now on the beta waitlist.
+
+
+![Confirmation](@site/static/img/beta-confirmation.png)
+
+### Wait for Beta Code
+
+
+Now, you'll need to wait for the Botanalytics team to process the waitlist and send out beta codes to selected participants. 
+
+### Receive Beta Code
+
+Once you are selected to participate in the beta program, you will receive a beta code via email. This code will allow you to sign up and access the beta website.
+
+Use the beta code you received to sign up and gain access to the beta website.

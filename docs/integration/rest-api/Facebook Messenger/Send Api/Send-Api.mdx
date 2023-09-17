@@ -1,0 +1,108 @@
+---
+sidebar_position: 1
+sidebar_label: Send Api
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Facebook Messenger Send Api
+
+<RunInPostmanButton/>
+
+Please refer to **[send api objects](https://developers.facebook.com/docs/messenger-platform/reference/send-api/)** in Facebook Messenger's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+           
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents an individual message.
+
+:::info 
+
+Please note that the `message object` within `messages` array above has the Facebook Messenger's native send api format.
+
+:::
+
+
+### Example of single message payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+         "messaging_type": "RESPONSE",
+         "message": {
+            "text": "Simple text message"
+         },
+         "recipient": {
+            "id": "1968991829825082"
+         }
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "messaging_type": "RESPONSE",
+         "message": {
+            "text": "Simple text message"
+         },
+         "recipient": {
+            "id": "1968991829825082"
+         }
+      }
+    },
+    {
+      "message": {
+        "messaging_type": "RESPONSE",
+        "message": {
+           "text": "Simple text message",
+           "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Red",
+                  "payload": "<POSTBACK_PAYLOAD>",
+                  "image_url": "http://example.com/img/red.png"
+               },
+               {
+                  "content_type": "text",
+                  "title": "Green",
+                  "payload": "<POSTBACK_PAYLOAD>",
+                  "image_url": "http://example.com/img/green.png"
+               }
+           ]
+         },
+         "recipient": {
+             "id": "1968991829825082"
+         }
+      }
+    }
+  ]
+}
+```

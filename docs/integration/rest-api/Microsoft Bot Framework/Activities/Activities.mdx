@@ -1,0 +1,163 @@
+---
+sidebar_position: 1
+sidebar_label: Activities
+hide_title: true
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Microsoft Bot Framework Activities
+
+<RunInPostmanButton/>
+
+Whenever your conversational agent logs an activity send it to our end as followed.
+
+Please refer to **[activity objects](https://github.com/Microsoft/botframework-sdk/blob/main/specs/botframework-activity/botframework-activity.md)** in Microsoft Bot Framework's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+            'activity':,
+            'timestamp': 
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents an individual message.
+      - `activity` (object): The activity object
+      - `timestamp` (number): The timestamp (in milliseconds) of the activity.
+
+:::info 
+
+Please note that the `message object` within `messages` array above has the Microsoft Bot Framework's native activity format plus `timestamp` field which is required for each message object.
+
+:::
+
+### Example of single message payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+          "activity": {
+              "text": "You are seeing this message because the bot received at least one 'ConversationUpdate' event, indicating you (and possibly others) joined the conversation. If you are using the emulator, pressing the 'Start Over' button to trigger this event again. The specifics of the 'ConversationUpdate' event depends on the channel. You can read more information at https://aka.ms/about-botframework-welcome-user",
+              "inputHint": "acceptingInput",
+              "channelId": "emulator",
+              "locale": "en-US",
+              "serviceUrl": "http://localhost:54362",
+              "conversation": {
+                  "id": "a50192d0-6715-11eb-9b27-dbbae1c236b1|livechat"
+              },
+              "from": {
+                  "id": "77b98540-6700-11eb-9b27-dbbae1c236b1",
+                  "name": "Bot",
+                  "role": "bot"
+              },
+              "recipient": {
+                  "id": "u1",
+                  "name": "User",
+                  "role": "user"
+              },
+              "replyToId": "a50fc3a0-6715-11eb-8d52-47a269e439e1",
+              "type": "message"
+          },
+          "timestamp": 1458692752478
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+          "activity": {
+              "text": "You are seeing this message because the bot received at least one 'ConversationUpdate' event, indicating you (and possibly others) joined the conversation. If you are using the emulator, pressing the 'Start Over' button to trigger this event again. The specifics of the 'ConversationUpdate' event depends on the channel. You can read more information at https://aka.ms/about-botframework-welcome-user",
+              "inputHint": "acceptingInput",
+              "channelId": "emulator",
+              "locale": "en-US",
+              "serviceUrl": "http://localhost:54362",
+              "conversation": {
+                  "id": "a50192d0-6715-11eb-9b27-dbbae1c236b1|livechat"
+              },
+              "from": {
+                  "id": "77b98540-6700-11eb-9b27-dbbae1c236b1",
+                  "name": "Bot",
+                  "role": "bot"
+              },
+              "recipient": {
+                  "id": "u1",
+                  "name": "User",
+                  "role": "user"
+              },
+              "replyToId": "a50fc3a0-6715-11eb-8d52-47a269e439e1",
+              "type": "message"
+          },
+          "timestamp": 1458692752478
+      }
+    },
+    {
+      "message": {
+           "activity": {
+                "channelData": {
+                    "postBack": true,
+                    "clientActivityID": "1612558418279eeu9ir5hl8",
+                    "clientTimestamp": "2021-02-05T20:53:38.280Z"
+                },
+                "text": "Blue",
+                "type": "message",
+                "channelId": "emulator",
+                "from": {
+                    "id": "u1",
+                    "name": "User",
+                    "role": "user"
+                },
+                "locale": "en-US",
+                "timestamp": "2021-02-05T20:53:38.325Z",
+                "entities": [
+                    {
+                        "requiresBotState": true,
+                        "supportsListening": true,
+                        "supportsTts": true,
+                        "type": "ClientCapabilities"
+                    }
+                ],
+                "conversation": {
+                    "id": "190fd040-67f4-11eb-82d7-cb7f44f65e5e|livechat"
+                },
+                "id": "388b0c50-67f4-11eb-82d7-cb7f44f65e5e",
+                "localTimestamp": "2021-02-05T20:53:38.000Z",
+                "recipient": {
+                    "id": "1909b5c0-67f4-11eb-ad43-cb132b189f8d",
+                    "name": "Bot",
+                    "role": "bot"
+                },
+                "serviceUrl": "http://localhost:60631",
+                "rawTimestamp": "2021-02-05T20:53:38.325Z",
+                "rawLocalTimestamp": "2021-02-05T23:53:38+03:00"
+          },
+          "timestamp": 1458692752500
+      }
+    }
+  ]
+}
+```

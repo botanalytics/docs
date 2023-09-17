@@ -1,0 +1,303 @@
+---
+sidebar_position: 2
+sidebar_label: Responses
+hide_title: true
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Amazon Alexa Responses
+
+<RunInPostmanButton/>
+
+Please refer to **[response objects](https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-and-response-json-reference.html#response-format)** in Amazon Alexa's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+           
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents an individual message.
+
+:::info 
+
+Please note that the `message object` within `messages` array above has the Amazon Alexa's native response object format plus `request` field which is the request that response is created for and which is required for each response message object.
+
+:::
+
+### Example of single message payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+    	 "message": {
+		    "outputSpeech":
+		    {
+		        "type": "SSML",
+		        "ssml": "<speak>Here's your fact: A year on Mercury is just 88 days long.</speak>"
+		    },
+		    "shouldEndSession": false,
+		    "timestamp": 1611014050053,
+		    "request": {
+		      "version": "1.0",
+		      "session": {
+		        "new": false,
+		        "sessionId": "amzn1.echo-api.session.ec389df4-8963-4e1a-b7db-daf029249990",
+		        "application": {
+		          "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		        },
+		        "user": {
+		          "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		        }
+		      },
+		      "context": {
+		        "Extensions": {
+		          "available": {}
+		        },
+		        "System": {
+		          "application": {
+		            "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		          },
+		          "user": {
+		            "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		          },
+		          "device": {
+		            "deviceId": "amzn1.ask.device.AE3SAOAZ23RI24BCEO54JULKAGKRHXQHO7MINX5QX3NWNS7LBEC4J4XHPHWCWIL7PJJFVKC6NLV7JE26AKWVDKKBGMK42ZHU5KMAPY5QRY6AGGG5PRQOQMQNAFNOEO6UGCVPJDRHECGWAOFYCUCJFP6ERA7VI6KGDAN6HMSCA3QUVHZEMGPEC",
+		            "supportedInterfaces": {}
+		          },
+		          "apiEndpoint": "https://api.amazonalexa.com",
+		          "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjIxYzczMzgyLTQ0YTMtNDMzYS04NWFjLTgwNGExN2UzYTNmMCIsImV4cCI6MTYxMDg0MzMzOSwiaWF0IjoxNjEwODQzMDM5LCJuYmYiOjE2MTA4NDMwMzksInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFBQTVqdWRqamt0Sjd5Q2JIdHJOSXhUS2dFQUFBQUFBQUIvb2JGUzQySG10SFUzeTRXZ05RRjBLVmM2MWE2OVc0ZU5VSGVrMEhMR0J0YTRvK1QwS2pjdkZvbXNpSTNJNmQzanB1NVEyeThhSmhnYjRnZ3pkbGVkY3NBN3pqZSszR01FYnIvSVVyRTJqOFEzVWpmb1huczNjYUlwTTVjWjFaQXY3OGR5QnJmK05ET1dDVUNPZ1ozeDkxY0tQN0V1dFlmLzNnZU5hQ21kVTIvNE9SZEQ1OHZwZ0pJdENwQnpZZ3lnc1o3elZBVEtQRlJWMThIMzhHekkxMmNDMXhxL2NMSWRncGNPeTBONFFRTFZlS3pVQzlQUmpnNEdOOVlWa3JaOVlDTnpMN0paY0RWd0VUa1JXVmlIQ1ZqWWR4UmtUcXpYM2djQWpJUnJMdWYyemg2c3dFWWZ0b2ZBZzBGVFZCUjdheGtpQkRsdE1aMjRYeGFiUkgrTDYyZW1xRWdicE5WSWRVa0xYV1R2NWFnRjNkUXJtVnN1eGNNMm4xdWNiQXRLVHFSQWR0TnhNamRRIiwiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUUzU0FPQVoyM1JJMjRCQ0VPNTRKVUxLQUdLUkhYUUhPN01JTlg1UVgzTldOUzdMQkVDNEo0WEhQSFdDV0lMN1BKSkZWS0M2TkxWN0pFMjZBS1dWREtLQkdNSzQyWkhVNUtNQVBZNVFSWTZBR0dHNVBSUU9RTVFOQUZOT0VPNlVHQ1ZQSkRSSEVDR1dBT0ZZQ1VDSkZQNkVSQTdWSTZLR0RBTjZITVNDQTNRVVZIWkVNR1BFQyIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFIVElFTjNEVlVFQkpVNjRPVko2QTZCWjZBUkJEWUZSRDJWRVZPR0JSTkxNUktMV1gzWEhMVkdHM1pOVVRZVUxOVVlBMlNMSzJSM1AzSkJFSU01RkFWSE1MMlZOS1hLTlNYWFpUTjRYVllVUDU2N1JOTEwzSkc2S1hPWUlXR1M2VDVLSUZCQlJRWElXNzY2T1VBWkFCTUNHWlUySjJMRVE2VjNYSElXTUpTT1pBWU1NTU1NTkhFRVVHNkY3WVNVN1U1WFZPVlRCUkhYWDdTWSJ9fQ.K_1l7hD9qcYo500qaW_wyQwhzrD73eICZ_S-F4Kf4pkYoPNz_qPV62fplQA4J3uNMTAg-KZRjSDbgLu2XWhnjMO4kNod5U4aTs91qRTQ-BRksCNwMmVihcSOhuNx49cAuL2M1gW9Te8Zi6z590S0x02Xnipkm27sWyRK9-tF5ScFM347ccSbdG_SjlHT1fUuwR3pngeArdFG0ABWYUejrwX_qosRoU61MDIOGmFqIHfaFnSSyhAP5Rh0ewb6M2dcIE7U_2Ep0mIhlxMaU61gCKkFZrAqgDEQ_zBItUvFyvNm7qox-SaqsqTJmhi8rVOk119JEz0gJHtf3RM9IAKNvA",
+		          "unit": {
+		            "unitId": "amzn1.ask.unit.AEIRFWKIPA5SVFEVMW5XVGL5ET6CCJ7AJ5NMCTRUFXD3MIHESUD2GM5BOPDGCXDKMCA3KW65LPNTJO7SWMMOK3FUIMQYVDDKLMZV22PJMF7AYYACAS77FWH6AX6SGCFGPM"
+		          }
+		        }
+		      },
+		      "request": {
+		        "type": "IntentRequest",
+		        "requestId": "amzn1.echo-api.request.e0275bd3-af29-4722-add8-94f3fb7c00d4",
+		        "timestamp": "2021-01-18T13:38:53Z",
+		        "locale": "en-US",
+		        "intent":
+		        {
+		          "name":"RecommendationIntent",
+		          "confirmationStatus":"NONE",
+		          "slots":{
+		            "I_Am":{
+		              "name":"I_Am",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "bloodTolerance":{
+		              "name":"bloodTolerance",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "I_Want":{
+		              "name":"I_Want",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "personality":{
+		              "name":"personality",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            }
+		          }
+		        },
+		        "dialogState": "STARTED"
+		      }
+		    }
+		  }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+```json
+{
+  "messages": [
+    {
+    	 "message": {
+		    "outputSpeech":
+		    {
+		        "type": "SSML",
+		        "ssml": "<speak>Here's your fact: A year on Mercury is just 88 days long.</speak>"
+		    },
+		    "shouldEndSession": false,
+		    "timestamp": 1611014050053,
+		    "request": {
+		      "version": "1.0",
+		      "session": {
+		        "new": false,
+		        "sessionId": "amzn1.echo-api.session.ec389df4-8963-4e1a-b7db-daf029249990",
+		        "application": {
+		          "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		        },
+		        "user": {
+		          "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		        }
+		      },
+		      "context": {
+		        "Extensions": {
+		          "available": {}
+		        },
+		        "System": {
+		          "application": {
+		            "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		          },
+		          "user": {
+		            "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		          },
+		          "device": {
+		            "deviceId": "amzn1.ask.device.AE3SAOAZ23RI24BCEO54JULKAGKRHXQHO7MINX5QX3NWNS7LBEC4J4XHPHWCWIL7PJJFVKC6NLV7JE26AKWVDKKBGMK42ZHU5KMAPY5QRY6AGGG5PRQOQMQNAFNOEO6UGCVPJDRHECGWAOFYCUCJFP6ERA7VI6KGDAN6HMSCA3QUVHZEMGPEC",
+		            "supportedInterfaces": {}
+		          },
+		          "apiEndpoint": "https://api.amazonalexa.com",
+		          "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjIxYzczMzgyLTQ0YTMtNDMzYS04NWFjLTgwNGExN2UzYTNmMCIsImV4cCI6MTYxMDg0MzMzOSwiaWF0IjoxNjEwODQzMDM5LCJuYmYiOjE2MTA4NDMwMzksInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFBQTVqdWRqamt0Sjd5Q2JIdHJOSXhUS2dFQUFBQUFBQUIvb2JGUzQySG10SFUzeTRXZ05RRjBLVmM2MWE2OVc0ZU5VSGVrMEhMR0J0YTRvK1QwS2pjdkZvbXNpSTNJNmQzanB1NVEyeThhSmhnYjRnZ3pkbGVkY3NBN3pqZSszR01FYnIvSVVyRTJqOFEzVWpmb1huczNjYUlwTTVjWjFaQXY3OGR5QnJmK05ET1dDVUNPZ1ozeDkxY0tQN0V1dFlmLzNnZU5hQ21kVTIvNE9SZEQ1OHZwZ0pJdENwQnpZZ3lnc1o3elZBVEtQRlJWMThIMzhHekkxMmNDMXhxL2NMSWRncGNPeTBONFFRTFZlS3pVQzlQUmpnNEdOOVlWa3JaOVlDTnpMN0paY0RWd0VUa1JXVmlIQ1ZqWWR4UmtUcXpYM2djQWpJUnJMdWYyemg2c3dFWWZ0b2ZBZzBGVFZCUjdheGtpQkRsdE1aMjRYeGFiUkgrTDYyZW1xRWdicE5WSWRVa0xYV1R2NWFnRjNkUXJtVnN1eGNNMm4xdWNiQXRLVHFSQWR0TnhNamRRIiwiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUUzU0FPQVoyM1JJMjRCQ0VPNTRKVUxLQUdLUkhYUUhPN01JTlg1UVgzTldOUzdMQkVDNEo0WEhQSFdDV0lMN1BKSkZWS0M2TkxWN0pFMjZBS1dWREtLQkdNSzQyWkhVNUtNQVBZNVFSWTZBR0dHNVBSUU9RTVFOQUZOT0VPNlVHQ1ZQSkRSSEVDR1dBT0ZZQ1VDSkZQNkVSQTdWSTZLR0RBTjZITVNDQTNRVVZIWkVNR1BFQyIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFIVElFTjNEVlVFQkpVNjRPVko2QTZCWjZBUkJEWUZSRDJWRVZPR0JSTkxNUktMV1gzWEhMVkdHM1pOVVRZVUxOVVlBMlNMSzJSM1AzSkJFSU01RkFWSE1MMlZOS1hLTlNYWFpUTjRYVllVUDU2N1JOTEwzSkc2S1hPWUlXR1M2VDVLSUZCQlJRWElXNzY2T1VBWkFCTUNHWlUySjJMRVE2VjNYSElXTUpTT1pBWU1NTU1NTkhFRVVHNkY3WVNVN1U1WFZPVlRCUkhYWDdTWSJ9fQ.K_1l7hD9qcYo500qaW_wyQwhzrD73eICZ_S-F4Kf4pkYoPNz_qPV62fplQA4J3uNMTAg-KZRjSDbgLu2XWhnjMO4kNod5U4aTs91qRTQ-BRksCNwMmVihcSOhuNx49cAuL2M1gW9Te8Zi6z590S0x02Xnipkm27sWyRK9-tF5ScFM347ccSbdG_SjlHT1fUuwR3pngeArdFG0ABWYUejrwX_qosRoU61MDIOGmFqIHfaFnSSyhAP5Rh0ewb6M2dcIE7U_2Ep0mIhlxMaU61gCKkFZrAqgDEQ_zBItUvFyvNm7qox-SaqsqTJmhi8rVOk119JEz0gJHtf3RM9IAKNvA",
+		          "unit": {
+		            "unitId": "amzn1.ask.unit.AEIRFWKIPA5SVFEVMW5XVGL5ET6CCJ7AJ5NMCTRUFXD3MIHESUD2GM5BOPDGCXDKMCA3KW65LPNTJO7SWMMOK3FUIMQYVDDKLMZV22PJMF7AYYACAS77FWH6AX6SGCFGPM"
+		          }
+		        }
+		      },
+		      "request": {
+		        "type": "IntentRequest",
+		        "requestId": "amzn1.echo-api.request.e0275bd3-af29-4722-add8-94f3fb7c00d4",
+		        "timestamp": "2021-01-18T13:38:53Z",
+		        "locale": "en-US",
+		        "intent":
+		        {
+		          "name":"RecommendationIntent",
+		          "confirmationStatus":"NONE",
+		          "slots":{
+		            "I_Am":{
+		              "name":"I_Am",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "bloodTolerance":{
+		              "name":"bloodTolerance",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "I_Want":{
+		              "name":"I_Want",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "personality":{
+		              "name":"personality",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            }
+		          }
+		        },
+		        "dialogState": "STARTED"
+		      }
+		    }
+		  }
+    },
+    {
+    	"message": {
+		    "outputSpeech":
+		    {
+		      "type": "PlainText",
+		      "text": "Here's your fact: A year on Mercury is just 88 days long."
+		    },
+		    "shouldEndSession": false,
+		    "timestamp": 1611014050053,
+		    "request": {
+		      "version": "1.0",
+		      "session": {
+		        "new": false,
+		        "sessionId": "amzn1.echo-api.session.ec389df4-8963-4e1a-b7db-daf029249990",
+		        "application": {
+		          "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		        },
+		        "user": {
+		          "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		        }
+		      },
+		      "context": {
+		        "Extensions": {
+		          "available": {}
+		        },
+		        "System": {
+		          "application": {
+		            "applicationId": "amzn1.ask.skill.1c491832-7b2e-4247-8300-a5f6f8041df3"
+		          },
+		          "user": {
+		            "userId": "amzn1.ask.account.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		          },
+		          "person": {
+		            "personId": "amzn1.ask.person.AGNXEZOAZXB4GG44YZZTDHYCKGUYNH3GTBMY3L6K5FOHGFTR3V3A7ZKJ2EYAIPILK3E44XYRLIF4QW7RRHQVQJK66LYQU7CL2CB23E6WVTN2WQYLQKQSCEW3HRLU3MHR3E5ZGPLCSSDKUH34SO53IJ75IDYCNZNQV3UOZOF4IF52HRUUD2K7NU3NHAYRY5ZTAITAASDJACHZ5JA"
+		          },
+		          "device": {
+		            "deviceId": "amzn1.ask.device.AE3SAOAZ23RI24BCEO54JULKAGKRHXQHO7MINX5QX3NWNS7LBEC4J4XHPHWCWIL7PJJFVKC6NLV7JE26AKWVDKKBGMK42ZHU5KMAPY5QRY6AGGG5PRQOQMQNAFNOEO6UGCVPJDRHECGWAOFYCUCJFP6ERA7VI6KGDAN6HMSCA3QUVHZEMGPEC",
+		            "supportedInterfaces": {}
+		          },
+		          "apiEndpoint": "https://api.amazonalexa.com",
+		          "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjIxYzczMzgyLTQ0YTMtNDMzYS04NWFjLTgwNGExN2UzYTNmMCIsImV4cCI6MTYxMDg0MzMzOSwiaWF0IjoxNjEwODQzMDM5LCJuYmYiOjE2MTA4NDMwMzksInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFBQTVqdWRqamt0Sjd5Q2JIdHJOSXhUS2dFQUFBQUFBQUIvb2JGUzQySG10SFUzeTRXZ05RRjBLVmM2MWE2OVc0ZU5VSGVrMEhMR0J0YTRvK1QwS2pjdkZvbXNpSTNJNmQzanB1NVEyeThhSmhnYjRnZ3pkbGVkY3NBN3pqZSszR01FYnIvSVVyRTJqOFEzVWpmb1huczNjYUlwTTVjWjFaQXY3OGR5QnJmK05ET1dDVUNPZ1ozeDkxY0tQN0V1dFlmLzNnZU5hQ21kVTIvNE9SZEQ1OHZwZ0pJdENwQnpZZ3lnc1o3elZBVEtQRlJWMThIMzhHekkxMmNDMXhxL2NMSWRncGNPeTBONFFRTFZlS3pVQzlQUmpnNEdOOVlWa3JaOVlDTnpMN0paY0RWd0VUa1JXVmlIQ1ZqWWR4UmtUcXpYM2djQWpJUnJMdWYyemg2c3dFWWZ0b2ZBZzBGVFZCUjdheGtpQkRsdE1aMjRYeGFiUkgrTDYyZW1xRWdicE5WSWRVa0xYV1R2NWFnRjNkUXJtVnN1eGNNMm4xdWNiQXRLVHFSQWR0TnhNamRRIiwiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUUzU0FPQVoyM1JJMjRCQ0VPNTRKVUxLQUdLUkhYUUhPN01JTlg1UVgzTldOUzdMQkVDNEo0WEhQSFdDV0lMN1BKSkZWS0M2TkxWN0pFMjZBS1dWREtLQkdNSzQyWkhVNUtNQVBZNVFSWTZBR0dHNVBSUU9RTVFOQUZOT0VPNlVHQ1ZQSkRSSEVDR1dBT0ZZQ1VDSkZQNkVSQTdWSTZLR0RBTjZITVNDQTNRVVZIWkVNR1BFQyIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFIVElFTjNEVlVFQkpVNjRPVko2QTZCWjZBUkJEWUZSRDJWRVZPR0JSTkxNUktMV1gzWEhMVkdHM1pOVVRZVUxOVVlBMlNMSzJSM1AzSkJFSU01RkFWSE1MMlZOS1hLTlNYWFpUTjRYVllVUDU2N1JOTEwzSkc2S1hPWUlXR1M2VDVLSUZCQlJRWElXNzY2T1VBWkFCTUNHWlUySjJMRVE2VjNYSElXTUpTT1pBWU1NTU1NTkhFRVVHNkY3WVNVN1U1WFZPVlRCUkhYWDdTWSJ9fQ.K_1l7hD9qcYo500qaW_wyQwhzrD73eICZ_S-F4Kf4pkYoPNz_qPV62fplQA4J3uNMTAg-KZRjSDbgLu2XWhnjMO4kNod5U4aTs91qRTQ-BRksCNwMmVihcSOhuNx49cAuL2M1gW9Te8Zi6z590S0x02Xnipkm27sWyRK9-tF5ScFM347ccSbdG_SjlHT1fUuwR3pngeArdFG0ABWYUejrwX_qosRoU61MDIOGmFqIHfaFnSSyhAP5Rh0ewb6M2dcIE7U_2Ep0mIhlxMaU61gCKkFZrAqgDEQ_zBItUvFyvNm7qox-SaqsqTJmhi8rVOk119JEz0gJHtf3RM9IAKNvA",
+		          "unit": {
+		            "unitId": "amzn1.ask.unit.AEIRFWKIPA5SVFEVMW5XVGL5ET6CCJ7AJ5NMCTRUFXD3MIHESUD2GM5BOPDGCXDKMCA3KW65LPNTJO7SWMMOK3FUIMQYVDDKLMZV22PJMF7AYYACAS77FWH6AX6SGCFGPM"
+		          }
+		        }
+		      },
+		      "request": {
+		        "type": "IntentRequest",
+		        "requestId": "amzn1.echo-api.request.e0275bd3-af29-4722-add8-94f3fb7c00d4",
+		        "timestamp": "2021-01-18T13:38:53Z",
+		        "locale": "en-US",
+		        "intent":
+		        {
+		          "name":"RecommendationIntent",
+		          "confirmationStatus":"NONE",
+		          "slots":{
+		            "I_Am":{
+		              "name":"I_Am",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "bloodTolerance":{
+		              "name":"bloodTolerance",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "I_Want":{
+		              "name":"I_Want",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            },
+		            "personality":{
+		              "name":"personality",
+		              "confirmationStatus":"NONE",
+		              "source":"USER"
+		            }
+		          }
+		        },
+		        "dialogState": "STARTED"
+		      }
+		    }
+		  }
+    }
+  ]
+}
+```

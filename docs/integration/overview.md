@@ -10,12 +10,12 @@ This section is written to guide you through integration steps for the channel o
 
 For the following channels, we *recommend* you to use a **native no-code integration**:
 
-* *Facebook Messenger*
-* *Salesforce Einstein Bots*
+* [*Facebook Messenger*](no-code/facebook-messenger)
+* *Salesforce Einstein Bots* **(soon)** 
 
 If your channel is not listed above, it is *recommended* to use our **software development kits (SDKs)** for the programming language of choice:
 
 * [*Node.js SDK*](sdks/node/getting-started)
 * [*Python SDK*](sdks/python/getting-started)
 
-> If neither of our native no-code integrations nor our SDKs are suitable for you, you can send your data directly to our endpoints using our [REST API](rest-api).
+> If neither of our native no-code integrations nor our SDKs are suitable for you, you can send your data directly to our endpoints using our [REST API](rest-api/overview).

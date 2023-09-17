@@ -1,0 +1,126 @@
+---
+sidebar_position: 2
+sidebar_label: Webhook
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Facebook Messenger Webhook
+
+<RunInPostmanButton/>
+
+Please refer to **[webhook objects](https://developers.facebook.com/docs/messenger-platform/reference/webhook-events)** in Facebook Messenger's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+           
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents an individual message.
+
+:::info 
+
+Please note that the `message object` within `messages` array above has the Facebook Messenger's native webhook format.
+
+:::
+
+
+### Example of single message payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "id": "1968991829825082",
+        "time": 1458692752478,
+        "messaging": [
+            {
+                "sender": {
+                    "id": "u1"
+                },
+                "recipient": {
+                    "id": "1968991829825082"
+                },
+                "timestamp": 1610457095018,
+                "message": {
+                    "mid": "m_fsliFMaU1BNKVtETWoh1cvtQuPG206gGuW4cQg2qr0cL7Fk2Lj4xGk32XeBTU0mJr2oH9EAzJL-Mo3LnDGrPQw",
+                    "text": "How?"
+                }
+            }
+        ]
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+        "id": "1968991829825082",
+        "time": 1458692752478,
+        "messaging": [
+            {
+	            "sender": {
+	                "id": "u1"
+	            },
+	            "recipient": {
+	                "id": "1968991829825082"
+	            },
+	            "timestamp": 1610457095018,
+	            "message": {
+	                "mid": "m_fsliFMaU1BNKVtETWoh1cvtQuPG206gGuW4cQg2qr0cL7Fk2Lj4xGk32XeBTU0mJr2oH9EAzJL-Mo3LnDGrPQw",
+	                "text": "How?"
+	            }
+            }
+        ]
+      }
+    },
+    {
+      "message": {
+        "id": "1968991829825082",
+        "time": 1458692752478,
+        "messaging": [
+            {
+                "sender": {
+                    "id": "u1"
+                },
+                "recipient": {
+                    "id": "1968991829825082"
+                },
+                "timestamp": 1610497736434,
+                "postback": {
+                    "title": "Show Stories",
+                    "payload": "{\"block_id\":\"5ffd8826fd8cb9542d07fd06\",\"card_id\":\"5ffd8827fd8cb9542d07fe2d\",\"hashcode\":1436742435,\"blocks\":[\"5ffd8826fd8cb9542d07fd00\",\"5ffd8826fd8cb9542d07fd07\"],\"action\":\"redirect\",\"__button_text__\":\"Show Stories\",\"__counter_id__\":\"5ffd8828fd8cb9542d07fe39\"}"
+                }
+            }
+        ]
+      }
+    }
+  ]
+}
+```
+
+

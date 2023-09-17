@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const { ProvidePlugin } = require("webpack");
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -18,6 +19,10 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
   onBrokenLinks: 'ignore',
+  customFields: {
+    apiBaseEndPoint: "https://api.beta.botanalytics.co/v2",
+    messagesEndpoint: "/messages"
+  },
 
   presets: [
     [
@@ -36,6 +41,41 @@ const config = {
     ],
   ],
 
+  plugins: [
+    "docusaurus-plugin-sass",
+    // Add custom webpack config to make @stoplight/elements work
+    () => ({
+      name: "custom-webpack-config",
+      configureWebpack: () => {
+        return {
+          module: {
+            rules: [
+              {
+                test: /\.m?js/,
+                resolve: {
+                  fullySpecified: false,
+                },
+              },
+            ],
+          },
+          plugins: [
+            new ProvidePlugin({
+              process: require.resolve("process/browser"),
+            }),
+          ],
+          resolve: {
+            fallback: {
+              buffer: require.resolve("buffer"),
+              stream: false,
+              path: false,
+              process: false,
+            },
+          },
+        };
+      },
+    }),
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -49,39 +89,45 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'basics/intro',
+            docId: 'get-started/intro',
             position: 'left',
-            label: 'Basics',
+            label: 'Get Started',
+            activeBasePath: 'docs/get-started',
           },
           {
             type: 'doc',
             docId: 'integration/overview',
             position: 'left',
             label: 'Integration',
+            activeBasePath: 'docs/integration',
           },
           {
             type: 'doc',
             docId: 'metrics/intro',
             position: 'left',
             label: 'Metrics',
+            activeBasePath: 'docs/metrics',
           },
           {
             type: 'doc',
             docId: 'support',
             position: 'left',
             label: 'Support',
+            activeBasePath: 'docs/support',
           },
           {
             type: 'doc',
             docId: 'postman/intro',
             position: 'left',
-            label: 'Postman'
+            label: 'Postman',
+            activeBasePath: 'docs/postman',
           },
           {
             href: 'https://github.com/botanalytics/docs',
             label: 'GitHub',
             position: 'right',
           },
+          { to: "/api/" },
         ],
       },
       footer: {
@@ -91,8 +137,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Basics',
-                to: '/docs/basics/intro',
+                label: 'Get Started',
+                to: '/docs/get-started/intro',
               },
             ],
           },
@@ -138,7 +184,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['powershell'],
+        additionalLanguages: ['powershell', 'http'],
       },
     }),
 };

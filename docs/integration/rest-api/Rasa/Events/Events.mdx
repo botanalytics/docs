@@ -1,0 +1,95 @@
+---
+sidebar_position: 1
+sidebar_label: Events
+hide_title: true
+---
+
+import RunInPostmanButton from '@site/src/components/RunInPostmanButton.jsx';
+
+# Rasa Events
+
+<RunInPostmanButton/>
+
+Whenever your conversational AI logs an event send it to our end as followed.
+
+Please refer to **[event objects](https://rasa.com/docs/rasa/action-server/events/)** in Rasa's documentation.
+
+```bash
+curl --include \
+--request POST \
+--header "Authorization: Token BOTANALYTICS_CHANNEL_TOKEN" \
+--header "Content-Type: application/json"
+--data "{
+   'messages': [
+      {
+         'message': {
+           
+         }
+      }
+   ]
+}" \
+https://api.beta.botanalytics.co/v2/messages
+```
+
+**Field Descriptions**
+
+- `messages` (array): An array containing messages.
+  - `message` (object): Represents the event object. Please paste the content of the event object inside.
+
+
+### Example of single message payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+          "event": "user",
+          "text": "Hey",
+          "parse_data": {
+              "intent": {
+                  "name": "greet",
+                  "confidence": 0.9
+              },
+              "entities": []
+          },
+          "metadata": {},
+      }
+    }
+  ]
+}
+```
+
+### Example of multiple messages payload in JSON format
+
+
+```json
+{
+  "messages": [
+    {
+      "message": {
+          "event": "user",
+          "text": "Hey",
+          "parse_data": {
+              "intent": {
+                  "name": "greet",
+                  "confidence": 0.9
+              },
+              "entities": []
+          },
+          "metadata": {},
+      }
+    },
+    {
+      "message": {
+          "event": "bot",
+          "text": "Hey there!",
+          "data": {}
+      }
+    }
+  ]
+}
+```
+
+
