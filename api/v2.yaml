@@ -1,7 +1,15 @@
 ---
 openapi: "3.2.0"
+schemes:
+  - https
 info:
   title: REST API
+  contact:
+      email:  
+      name: Botanalytics Developers
+      url: #'https://developer.zoom.us/'
+      x-twitter: botanalyticsco
+  description: API Description
   version: 2
   description: |-
 
@@ -41,9 +49,9 @@ info:
      key in the `Authorization` header as a Bearer token. The header should be formatted as follows:
          
 
-        ```shell  
+         
         Authorization: Bearer BOTANALYTICS_API_KEY
-        ``` 
+         
 
     Please note the following security best practices for API
      key usage:
@@ -109,139 +117,135 @@ info:
 servers:
   - url: 'https://api.beta.botanalytics.co/v2'
     description: Production
-tags:
-  - description: 
-    name: Facebook Messenger Send Api
-  - description:  
-    name: amazon-alexa
-  - description:  
-    name: microsoft-bot-framework
-  - description:  
-    name: likes
-  - description:  
-    name: samsung-bixby
-  - description:  
-    name: rasa
-  - description: 
-    name: Facebook Messenger Webhook
-webhooks:
-  # Each webhook needs a name
-  newPet:
-    # This is a Path Item Object, the only difference is that the request is initiated by the API provider
-    post:
-      requestBody:
-        description: Information about a new pet in the system
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Thread"
-      responses:
-        "200":
-          description: Return a 200 status to indicate that the data was received successfully
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
   "/messages":
     post:
-      deprecated: true
       description: |
-        Get recent media from a geography subscription that you created.
+        This endpoint designed for our system to receive messages exchanged between virtual agents, users and human agents.
 
-        **Note:** You can only access Geographies that were explicitly created by your OAuth client. Check the
-        Geography Subscriptions section of the [real-time updates page](https://instagram.com/developer/realtime/).
-        When you create a subscription to some geography that you define, you will be returned a unique `geo-id` that
-        can be used in this query. To backfill photos from the location covered by this geography, use the
-        [media search endpoint](https://instagram.com/developer/endpoints/media/).
-
-        **Warning:** [Deprecated](http://instagram.com/developer/changelog/) for Apps created **on or after** Nov 17, 2015
-      parameters:
-        - description: The geography ID.
-          in: path
-          name: geo-id
-          required: true
-          type: string
-        - description: Max number of media to return.
-          format: int32
-          in: query
-          name: count
-          required: false
-          type: integer
-        - description: Return media before this `min_id`.
-          in: query
-          name: min_id
-          required: false
-          type: string
+        You can send one or more messages in a single request.
+      requestBody:
+        required: true
+        content:
+          "application/json":
+              schema:
+                $ref: "#/components/schemas/Messages"
       responses:
         "200":
-          description: List of recent media entries from a geography subscription.
-          schema:
-            $ref: "#/definitions/MediaListResponse"
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  request_id:
+                    type: string
+                    description: Unique request ID assigned by our REST API for each successful request
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    description: Error messages in your request 
+                    items:
+                       type: string
+              example:
+                errors: ["Request payloads must be in JSON format."]
+                  
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    description: Error messages in your request 
+                    items:
+                       type: string
+              example:
+                errors: ["Request is missing a valid Authorization header."]
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    description: Error messages in your request 
+                    items:
+                       type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    description: Error messages in your request 
+                    items:
+                       type: string
+              example:
+                errors: ["Failed to process the request."]          
       security:
-        - api_key: []
-        - instagram_auth:
-            - basic
-      summary: Send Api 
-      tags:
-        - Facebook Messenger Send Api
-  "/messages":
-    post:
-      deprecated: true
-      description: |
-        Get recent media from a geography subscription that you created.
-
-        **Note:** You can only access Geographies that were explicitly created by your OAuth client. Check the
-        Geography Subscriptions section of the [real-time updates page](https://instagram.com/developer/realtime/).
-        When you create a subscription to some geography that you define, you will be returned a unique `geo-id` that
-        can be used in this query. To backfill photos from the location covered by this geography, use the
-        [media search endpoint](https://instagram.com/developer/endpoints/media/).
-
-        **Warning:** [Deprecated](http://instagram.com/developer/changelog/) for Apps created **on or after** Nov 17, 2015
-      parameters:
-        - description: The geography ID.
-          in: path
-          name: geo-id
-          required: true
-          type: string
-        - description: Max number of media to return.
-          format: int32
-          in: query
-          name: count
-          required: false
-          type: integer
-        - description: Return media before this `min_id`.
-          in: query
-          name: min_id
-          required: false
-          type: string
-      responses:
-        "200":
-          description: List of recent media entries from a geography subscription.
-          schema:
-            $ref: "#/definitions/MediaListResponse"
-      security:
-        - api_key: []
-        - instagram_auth:
-            - basic
-      summary: Webhook
-      tags:
-        - Facebook Messenger Webhook
+        - bearer_auth: []  
+      summary: Messages Endpoint For Universal Channel
 
 components:
+  securitySchemes:
+    bearer_auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+
+        ### How to Authenticate with OAuth
+
+        In order to make an authenticated request, include a bearer-type
+        `Authorization` header containing your OAuth token. All requests must be
+        made over HTTPS.
+
+        ### Authenticate with a Bearer Authorization Header
+
+        ```
+        curl -X POST -H "Authorization: Bearer $BOTANALYTICS_API_KEY" "https://api.beta.botanalytics.co/v2/messages"
+        ```
+        
+  security:
+    - bearer_auth: []  
   schemas:
-    #Messages:
-    #  description: List of messages
-    #  title: Messages
-    #  type: object
-    #  items:
-    #    $ref: "#/components/schemas/Message"
-    #  properties:
-    #    messages:
+    Messages:
+      description: List of messages
+      title: Messages
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            properties:
+              message:
+                $ref: "#/components/schemas/Message"
     Message: 
-      description: I'm a model's description.
+      description: This is main message object
       type: object
       title: Message
       properties:
         id:
           type: string
-          description: ID of the message
+          description: Unique ID of the message
         thread:
           $ref: "#/components/schemas/Thread"
           description: Thread
@@ -252,10 +256,311 @@ components:
           $ref: "#/components/schemas/InnerMessage"
           description: Message  
       required:
-        - thread
-        - conversation
+        - message
+    Thread:
+        description: This is the thread object for the message
+        type: object
+        title: Thread
+        properties:
+          id:
+            type: string
+            default: Default is assigned by our system
+            description: ID of the thread
+          is_group:
+            type: boolean
+            default: false
+            description: Please set is_group option as `true` for threads with multiple users.
+          is_currently_owned:
+            type: boolean
+            default: false
+            description: 
+    Conversation:
+        description: This is the conversation object for the message
+        type: object
+        title: Conversation
+        properties:
+          id:
+            type: string
+            description: ID of the conversation
+          is_new:
+            type: boolean
+          context:
+            type: object
+            properties:
+              should_end_session:
+                type: boolean
+                description: This is a signal that can be used for ending a conversation
+          start_timestamp:
+            type: number
+    Sender:
+        description: This is the sender of the message
+        type: object
+        title: Sender
+        properties:
+          id:
+            type: string
+            default: Default is assigned by our system
+            description: ID of the sender
+          type:
+            description: Type of the sender
+            enum:
+              - user
+              - virtual-agent
+              - human-agent
+            type: string
+          locale:
+            type: string
+            description: Locale of the sender
+    Recipient:
+        description: This is the recipient of the message
+        type: object
+        title: Recipient
+        properties:
+          id:
+            type: string
+            default: Default is assigned by our system
+            description: ID of the recipient
+    TextMessage: 
+        description: This is the text message structure
+        type: object
+        title: TextMessage
+        properties:
+          text:
+            type: string
+            default: 
+            description: Text
+        required:
+          - text
+    SpeechMessage:
+        description: This is the speech message structure
+        type: object
+        title: SpeechMessage
+        properties:
+          text:
+            type: string
+            default:  
+            description: Text
+          ssml:
+            type: string
+            default:
+            description: Ssml
+        required:
+          oneOf:
+            - text
+            - ssml
+    StickerMessage:
+        description: This is the sticker message structure 
+        type: object
+        title: StickerMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Text
+          sticker_id:
+            type: string
+            default:
+            description: Sticker ID
+        required:
+          oneOf:
+            - text
+            - sticker_id
+    ImageMessage: 
+        description: This is the image message structure 
+        type: object
+        title: ImageMessage
+        properties:
+          url:
+            type: string
+            description: Url of the image
+          title:
+            type: string
+          height:
+            type: integer
+            description: Height of the image
+          width:
+            type: integer
+            description: Width of the image
+        required:
+          - url
+    AudioMessage: 
+        description: This is the audio message structure 
+        type: object
+        title: AudioMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Url of the image
+          image:
+            $ref: "#/components/schemas/ImageMessage"
+            description: Image of the audio
+          title:
+            type: string
+            description: Title of the audio
+        required:
+          - url
+    VideoMessage: 
+        description: This is the video message structure 
+        type: object
+        title: VideoMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Url of the video
+          title:
+            type: string
+            description: Height of the video
+        required:
+          - url
+    DocumentMessage: 
+        description: This is the document message structure 
+        type: object
+        title: DocumentMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Url of the document
+        required:
+          - url
+    FileMessage: 
+        description: This is the file message structure 
+        type: object
+        title: FileMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Url of the file
+        required:
+          - url
+    UrlMessage: 
+        description: This is the url message structure 
+        type: object
+        title: UrlMessage
+        properties:
+          url:
+            type: string
+            default:  
+            description: Url
+          is_displayed:
+            type: boolean
+            description: 
+        required:
+          - url
+    LocationMessage: 
+        description: This is the location message structure 
+        type: object
+        title: LocationMessage
+        properties:
+          coordinates:
+            type: object
+            default:  
+            properties:
+              latitude:
+                type: number
+                default:  
+                description: Latitude of the coordinates
+              longitude:
+                type: number
+                default: 
+                description: Longitude of the coordinates
+        required:
+          - coordinates
+    PostbackMessage: 
+        description: This is the postback message structure 
+        type: object
+        title: PostbackMessage
+        properties:
+          title:
+            type: string
+            description: 
+          index:
+            type: string
+            description: 
+        required:
+          oneOf: 
+            - title
+            - index
+    SuggestionMessage: 
+        description: This is the suggestion message structure 
+        type: object
+        title: SuggestionMessage
+        properties:
+          title:
+            type: string
+            description: 
+        required:
+          - title
+    CardMessage: 
+        description: This is the card message structure 
+        type: object
+        properties:
+          title:
+            type: string
+          subtitle:
+            type: string
+          text:
+            type: string
+          images:
+            type: array
+            items:
+              $ref: '#/components/schemas/ImageMessage'
+          audios:
+            type: array
+            items:
+              $ref: '#/components/schemas/AudioMessage'
+          videos:
+            type: array
+            items:
+              $ref: '#/components/schemas/VideoMessage'
+          animations:
+            type: array
+            items:
+              type: object
+              properties:
+                url:
+                  type: string
+          buttons:
+            type: array
+            items:
+              type: object
+              properties:
+                title:
+                  type: string
+                url:
+                  type: string
+    CarouselMessage: 
+        description: This is the carousel message structure 
+        type: object
+        title: CarouselMessage
+        properties:
+          items:
+            type: array
+            items:
+              type: object
+              properties:
+                title:
+                  type: string
+                  default:  
+                  description:  
+    ListMessage: 
+        description: This is the list message structure 
+        type: object
+        properties:
+          items:
+            type: array
+            items:
+              type: object
+              properties:
+                title:
+                  type: string
+                  default:  
+                  description: 
     InnerMessage: 
-      description: I'm a model's description.
+      description: This is the inner message object structure
       type: object
       title: InnerMessage
       properties:
@@ -275,9 +580,60 @@ components:
           oneOf:
             - $ref: '#/components/schemas/Texts'
             - $ref: '#/components/schemas/Speeches'
+            - $ref: '#/components/schemas/Stickers'
+            - $ref: '#/components/schemas/Images'
+            - $ref: '#/components/schemas/Audios'
+            - $ref: '#/components/schemas/Videos'
+            - $ref: '#/components/schemas/Documents'
+            - $ref: '#/components/schemas/Files'
+            - $ref: '#/components/schemas/Urls'
+            - $ref: '#/components/schemas/Locations'
+            - $ref: '#/components/schemas/Postback'
+            - $ref: '#/components/schemas/Suggestions'
+            - $ref: '#/components/schemas/Cards'
+            - $ref: '#/components/schemas/Carousel'
+            - $ref: '#/components/schemas/List'
+        event:
+          type: object
+          description: Event of the message
+          oneOf:
+            - $ref: '#/components/schemas/ConversationStartedEvent'
+            - $ref: '#/components/schemas/ConversationEndedEvent'
+            - $ref: '#/components/schemas/EscalatedEvent'
+            - $ref: '#/components/schemas/FallbackEvent'
+            - $ref: '#/components/schemas/HandoverEvent'
+            - $ref: '#/components/schemas/MessageReadEvent'
+            - $ref: '#/components/schemas/MessageDeliveredEvent'
+            - $ref: '#/components/schemas/MessageReactionAddedEvent'
+            - $ref: '#/components/schemas/MessageReactionRemovedEvent'
+            - $ref: '#/components/schemas/MessageEditedEvent'
+            - $ref: '#/components/schemas/MessageDeletedEvent'
+            - $ref: '#/components/schemas/MessageHighlightedEvent'
+            - $ref: '#/components/schemas/ReferralEvent' 
+            - $ref: '#/components/schemas/OptinEvent'
+            - $ref: '#/components/schemas/GameStartedEvent' 
+            - $ref: '#/components/schemas/GameCompletedEvent'
+            - $ref: '#/components/schemas/MissingInputEvent'
+            - $ref: '#/components/schemas/SlotResetEvent'
+            - $ref: '#/components/schemas/SlotUnsetEvent'
+            - $ref: '#/components/schemas/AuthenticationRequestedEvent'
+            - $ref: '#/components/schemas/AuthenticationSucceededEvent'
+            - $ref: '#/components/schemas/PurchaseCompletedEvent'
+        locale:
+          type: string
+          description: Locale of the message, ISO Language Code
+        reply_to:
+          $ref: '#/components/schemas/ReplyTo'
+        context:
+          $ref: '#/components/schemas/Context'
+        nlu:
+          type: object
+          properties:
+            intent:
+              type: string
+              description: Intent of the message
       required:
-        - thread
-        - conversation
+        - timestamp
     Texts:
       type: object
       title: Texts
@@ -296,328 +652,384 @@ components:
           items:
             type: object
             $ref: '#/components/schemas/SpeechMessage'
-    Thread:
-        description: I'm a model's description.
-        type: object
-        title: Thread
-        properties:
-          id:
-            type: string
-            default: Default is assigned by our system
-            description: ID of the thread
-          is_group:
-            type: boolean
-            default: false
-            description: Name of the task
-          is_currently_owned:
-            type: boolean
-            default: false
-            description: Boolean indicating if the task has been completed or not
-    Conversation:
-        description: I'm a model's description.
-        type: object
-        title: Conversation
-        properties:
-          id:
-            type: string
-            description: ID of the conversation
-            required: false
-          name:
-            type: string
-            minLength: 1
-            maxLength: 100
-            description: Name of the task
-    Sender:
-        description: I'm a model's description.
-        type: object
-        title: Sender
-        properties:
-          id:
-            type: string
-            default: Default is assigned by our system
-            description: ID of the sender
-          type:
-            description: Type of the sender
-            enum:
-              - user
-              - virtual-agent
-              - human-agent
-            type: string
-          locale:
-            type: string
-            description: Locale of the sender
-    Recipient:
-        description: I'm a model's description.
-        type: object
-        title: Recipient
-        properties:
-          id:
-            type: string
-            default: Default is assigned by our system
-            description: ID of the recipient
-    TextMessage: 
-        description: I'm a model's description.
-        type: object
-        title: TextMessage
-        properties:
-          text:
-            type: string
-            default: 
-            description: Text
-        required:
-          - text
-    SpeechMessage:
-        description: I'm a model's description.
-        type: object
-        title: SpeechMessage
-        properties:
-          text:
-            type: string
-            default:  
-            description: Text
-          ssml:
-            type: string
-            default:
-            description: Ssml
-        required:
-          oneOf:
-            - text
-            - ssml
-    StickerMessage:
-        description: I'm a model's description.
-        type: object
-        title: StickerMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Text
-          sticker_id:
-            type: string
-            default:
-            description: Sticker ID
-        required:
-          oneOf:
-            - text
-            - sticker_id
-    ImageMessage: 
-        description: I'm a model's description.
-        type: object
-        title: ImageMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url of the image
-          height:
-            type: integer
-            description: Height of the image
-          width:
-            type: integer
-            description: Width of the image
-        required:
-          - url
-    AudioMessage: 
-        description: I'm a model's description.
-        type: object
-        title: AudioMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url of the image
-          image:
-            $ref: "#/components/schemas/ImageMessage"
-            description: Image of the audio
-          title:
-            type: string
-            description: Title of the audio
-        required:
-          - url
-    VideoMessage: 
-        description: I'm a model's description.
-        type: object
-        title: VideoMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url of the video
-          title:
-            type: string
-            description: Height of the video
-        required:
-          - url
-    DocumentMessage: 
-        description: I'm a model's description.
-        type: object
-        title: DocumentMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url of the document
-        required:
-          - url
-    FileMessage: 
-        description: I'm a model's description.
-        type: object
-        title: FileMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url of the file
-        required:
-          - url
-    UrlMessage: 
-        description: I'm a model's description.
-        type: object
-        title: UrlMessage
-        properties:
-          url:
-            type: string
-            default:  
-            description: Url
-          is_displayed:
-            type: boolean
-            description: 
-        required:
-          - url
-    LocationMessage: 
-        description: I'm a model's description.
-        type: object
-        title: LocationMessage
-        properties:
-          coordinates:
-            type: object
-            default:  
-            properties:
-              latitude:
-                type: number
-                default:  
-                description: Latitude of the coordinates
-              longitude:
-                type: number
-                default: 
-                description: Longitude of the coordinates
-        required:
-          - coordinates
-    PostbackMessage: 
-        description: I'm a model's description.
-        type: object
-        title: PostbackMessage
-        properties:
-          title:
-            type: string
-            description: 
-          index:
-            type: string
-            description: 
-        required:
-          oneOf: 
-            - title
-            - index
-    SuggestionMessage: 
-        description: I'm a model's description.
-        type: object
-        title: SuggestionMessage
-        properties:
-          title:
-            type: string
-            description: 
-        required:
-          - title
-    CardMessage: 
-        description: I'm a model's description.
-        type: object
-        title: CardMessage
-        properties:
-        required:
-    CarouselMessage: 
-        description: I'm a model's description.
-        type: object
-        title: CarouselMessage
-        properties:
+    Stickers:
+      type: object
+      title: Stickers
+      properties:
+        stickers:
+          type: array
           items:
-            type: array
-            items:
+            type: object
+            $ref: '#/components/schemas/StickerMessage'  
+    Images:
+      type: object
+      title: Images
+      properties:
+        images:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/ImageMessage'  
+    Audios:
+      type: object
+      title: Audios
+      properties:
+        audios:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/AudioMessage'                                    
+    Videos:
+      type: object
+      title: Videos
+      properties:
+        videos:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/VideoMessage' 
+    Documents:
+      type: object
+      title: Documents
+      properties:
+        documents:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/DocumentMessage'
+    Files:
+      type: object
+      title: Files
+      properties:
+        files:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/FileMessage' 
+    Urls:
+      type: object
+      title: Urls
+      properties:
+        urls:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/UrlMessage' 
+    Locations:
+      type: object
+      title: Locations
+      properties:
+        locations:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/LocationMessage' 
+    Suggestions:
+      type: object
+      title: Suggestions
+      properties:
+        suggestions:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/SuggestionMessage'
+    Cards:
+      type: object
+      title: Cards
+      properties:
+        cards:
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/CardMessage' 
+    Postback:
+      type: object
+      title: Postback
+      properties:
+        postback:
+          $ref: '#/components/schemas/PostbackMessage'   
+    List:
+      type: object
+      title: List
+      properties:
+        list: 
+          $ref: '#/components/schemas/ListMessage'
+    Carousel:
+      type: object
+      title: Carousel
+      properties:
+        carousel: 
+          $ref: '#/components/schemas/CarouselMessage'  
+    HandoverEvent:
+      type: object
+      description: This is handover event object structure
+      properties:
+        handover:
+          type: object
+          properties:
+            thread_control_taken_away:
+              type: object
+    MessageReadEvent:
+      type: object
+      description: This is message read object structure
+      properties:
+        message_read:
+          type: object
+          properties:
+            before_or_at_timestamp:
+              type: number
+    MessageDeliveredEvent:
+      type: object
+      description:  This is message delivered object structure
+      properties:
+        message_delivered:
+          type: object
+          properties:
+            before_or_at_timestamp:
+              type: number      
+    MessageReactionAddedEvent:
+      type: object
+      description: This is message reaction added object structure
+      properties:
+        message_reaction_added:
+          type: object
+          properties:
+            platform_message_id:
+              type: string
+            description:
+              type: string       
+    MessageReactionRemovedEvent:
+      type: object
+      description: This is message reaction removed object structure
+      properties:
+        message_reaction_removed:
+          type: object
+          properties:
+            platform_message_id:
+              type: string
+    MessageEditedEvent:
+      type: object
+      description: This is message edited event object structure
+      properties:
+        message_edited:
+          type: object
+          properties:
+            platform_message_id:
+              type: string
+    MessageDeletedEvent:
+      type: object
+      description: This is message deleted event object structure
+      properties:
+        message_deleted:
+          type: object
+          properties:
+            platform_message_id:
+              type: string
+    MessageHighlightedEvent:
+      type: object
+      description: This is message highlighed event object structure
+      properties:
+        message_reaction_removed:
+          type: object
+          properties:
+            platform_message_id:
+              type: string
+    ReferralEvent:
+      type: object
+      description: This is referral event object structure
+      properties:
+        referral:
+          type: object
+          properties:
+            source:
               type: object
               properties:
-                title:
+                url:
                   type: string
-                  default:  
-                  description: 
-                subtitle:
-                  type: string
-                  default: 
-                  description: 
-        required:
-    ListMessage: 
-        description: I'm a model's description.
-        type: object
-        title: ListMessage
-        properties:
-        required:
-  securitySchemes:
-    API Key:
-      name: apikey
-      type: apiKey
-      in: query
-      description: Just use `123`. It's super secure ;)
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: number
-      description: Return a limited set of results *I'm a shared parameter. I can be reused in multiple endpoints!*
-    ID:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
-      description: ID of the Todo
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            title: Error
-            type: object
-            description: A standard error object.
-            x-tags:
-              - Common
-            properties:
-              status:
-                type: string
-                description: A code.
-              error:
-                type: string
-            required:
-              - status
-              - error
-    Unauthorized:
-      description: Action not allowed
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              message:
-                type: string
-            required:
-              - message
-  examples:
-    user:
-      value:
-        userId: 2
-        firstName: racks
-        lastName: jacson
-        phoneNumber: '123456'
-        emailAddress: racks.jacson@learningcontainer.com
-tags:
-  - name: Todos
+            campaign:
+              type: string
+            medium:
+              type: string
+            context:
+              type: string
+    OptinEvent:
+      type: object
+      description: This is optin event object structure
+      properties:
+        optin:
+          type: object
+    GameStartedEvent:
+      type: object
+      description: This is game started event object structure
+      properties:
+        game_started:
+          type: object
+    GameCompletedEvent:
+      type: object
+      description: This is game completed event object structure
+      properties:
+        game_completed:
+          type: object
+          properties:
+            score:
+              type: string 
+    MissingInputEvent:
+      type: object
+      description: This is missing input event object structure
+      properties:
+        missing_input:
+          type: object
+    ConversationStartedEvent:
+      type: object
+      description: This is conversation started object structure, please send this event when you want to start a new conversation.
+      properties:
+        conversation_started:
+          type: object
+    ConversationEndedEvent:
+      type: object
+      description: This is conversation ended object structure, please send this event when you want to end a conversation.
+      properties:
+        conversation_ended:
+          type: object
+          properties:
+            reason:
+              type: string    
+    SlotResetEvent:
+      type: object
+      description: This is slot reset event object structure
+      properties:
+        slot_reset:
+          type: object
+    SlotUnsetEvent:
+      type: object
+      description: This is slot unset event object structure
+      properties:
+        slot_unset:
+          type: object
+          properties:
+            name:
+              type: string
+    EscalatedEvent:
+      type: object
+      description: This is escalated event object structure, please send this event when conversation is escalated to human-agent
+      properties:
+        escalated:
+          type: object
+    FallbackEvent:
+      type: object
+      description: This is fallback event object structure, please send this event when conversation has a fallback 
+      properties:
+        fallback:
+          type: object
+    AuthenticationRequestedEvent:
+      type: object
+      description: This is authentication requested event object structure
+      properties:
+        authentication_requested:
+          type: object
+          properties:
+            type:
+              type: string
+    AuthenticationSucceededEvent:
+      type: object
+      description: This is authentication succeeded event object structure
+      properties:
+        authentication_succeeded:
+          type: object
+          properties:
+            type:
+              type: string
+            token:
+              type: string
+    PurchaseCompletedEvent:
+      type: object
+      description: This is purchase completed event object structure, please send this event when there is a purchase completed within the conversation
+      properties:
+        purchase_completed:
+          type: object
+          properties:
+            total: integer
+    ReplyTo:
+      type: object
+      description: This is reply to object structure, please use this field when there is a message within a platform that your conversational agent is replying
+      properties:
+        platform_message_id:
+          type: string
+    Context:
+      type: object
+      properties:
+        is_in_sandbox:
+          type: boolean
+        is_response_expected:
+          type: boolean
+        is_ephemeral:
+          type: boolean
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
