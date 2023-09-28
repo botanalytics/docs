@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+next_label: Key Terms Glossarys
 ---
 
 # Introduction
