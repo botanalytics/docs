@@ -18,7 +18,7 @@ In the project dashboard, locate the project you want to un-star. You can scroll
 
 ## Un-Star the Project
 
-Click on the star icon located on the top left corner of the starred project's tile. By clicking on the star icon again, you will un-star the project.
+Click on the star icon located on the top right corner of the starred project's tile. By clicking on the star icon again, you will un-star the project.
 
 ![Unstar Project](@site/static/img/projects/unstar.png)
 

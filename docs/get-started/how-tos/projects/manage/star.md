@@ -16,7 +16,7 @@ In the project dashboard, locate the project you wish to star. You can scroll th
 
 ### Star the Project
 
-Click on the star icon located on the top left corner of the project tile. By clicking on the star, you will star the project.
+Click on the star icon located on the top right corner of the project tile. By clicking on the star, you will star the project.
 
 ![Star Project](@site/static/img/projects/star.png)
 
