@@ -15,8 +15,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "2.4.1",
-    "@docusaurus/preset-classic": "2.4.1",
+    "@docusaurus/core": "3.0.0",
+    "@docusaurus/preset-classic": "3.0.0",
     "@mdx-js/react": "^1.6.21",
     "@stoplight/elements": "^7.5.13",
     "buffer": "^6.0.3",
@@ -27,11 +27,10 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "sass": "^1.49.9",
-    "swagger-ui-plugin-hierarchical-tags": "^1.0.3",
     "url": "^0.11.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/module-type-aliases": "3.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "typescript": "^4.5.2"
   },
