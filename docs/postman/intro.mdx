@@ -2,6 +2,12 @@
 sidebar_position: 6
 ---
 
+import PostmanLookLike from '@site/static/img/postman/look-like.png';
+import PostmanChannels from '@site/static/img/postman/channels.png';
+import PostmanMessagesExample from '@site/static/img/postman/messages-example.png';
+import PostmanGlobals from '@site/static/img/postman/globals.png';
+import PostmanCustomEnvironment from '@site/static/img/postman/custom-environment.png';
+
 # Explore Botanalytics APIs with Postman
 
 
@@ -20,28 +26,26 @@ Postman is a platform that makes it very easy to communicate with APIs. It allow
 
 To get started, go to **[the Botanalytics workspace on Postman.](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/overview)** When you go there, you should see an interface that looks like this:
 
-![Postman Botanalytics workspace look like this](@site/static/img/postman/look-like.png)
+<img src={PostmanLookLike} alt="Postman Botanalytics workspace look like this" />
 
 
 This is the Botanalytics workspace. At the time of writing, it contains one API collection. This API can be explored and you can use the predefined endpoints to make a request. There are five channel request examples here in this collection and different message type payloads.
 
-![Channels](@site/static/img/postman/channels.png)
-
+<img src={PostmanChannels} alt="Channels" />
 
 The screenshot below shows an example of a request going to the `/messages` endpoint.
 
-![Messages endpoint example request](@site/static/img/postman/messages-example.png)
-
+<img src={PostmanMessagesExample} alt="Messages endpoint example request" />
 
 One of the best features of Postman is that it allows you to change pre-defined variables, such as the `api-host` variable. Since all the API definitions make use of this variable, you can switch between deployments with a **[single click.](https://www.postman.com/botanalytics/workspace/official-botanalytics-workspace/globals)**
 
-![Globals environment](@site/static/img/postman/globals.png)
+<img src={PostmanGlobals} alt="Globals environment" />
 
 You’re able to use the Botanalytics workspace as a starting point to bootstrap custom environments to work from. This can be a convenient way to separate the production from the development environment. 
 
 Also, this is where you could set `api-authentication-token` environment variable which is used for authorization of the requests on our end for `/messages` endpoint REST API. It's a **[JWT](https://jwt.io/introduction)** token provided when you add a channel to your project.
 
-![Universal channel environment](@site/static/img/postman/custom-environment.png)
+<img src={PostmanCustomEnvironment} alt="Universal channel environment" />
 
 ## Try it out!
 
