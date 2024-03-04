@@ -4,55 +4,62 @@ sidebar_label: Update an Event
 hide_title: true
 ---
 
-import Dashboard from '@site/static/img/dashboard.png';
-import EventsMenuButton from '@site/static/img/event-funnel/events-menu-icon.png';
-import EditEventMenu from '@site/static/img/event-funnel/edit-event-menu.png';
-import EditEventButton from '@site/static/img/event-funnel/edit-event-button.png';
-import EditEventDetailsShown from '@site/static/img/event-funnel/event-details-shown.png';
-import EditedEventShown from '@site/static/img/event-funnel/edited-event-shown.png';
-import UpdateEventButton from '@site/static/img/event-funnel/update-event-button.png';
+import EventDashboard from '@site/static/img/event-funnel/event-dashboard.png';
+import EventEllipsis from '@site/static/img/event-funnel/event-ellipsis.png';
+import EventClickEdit from '@site/static/img/event-funnel/event-clickedit.png';
+import EventClicktoUpdateName from '@site/static/img/event-funnel/event-clicktoupdatename.png';
+import EventUpdatedName from '@site/static/img/event-funnel/event-updatedname.png';
+import EventAddCondition from '@site/static/img/event-funnel/event-addcondition.png';
+import EventUpdateExpression from '@site/static/img/event-funnel/event-updateexpression.png';
+import EventUpdatePage from '@site/static/img/event-funnel/event-updatepage.png';
+import EventClickonUpdate from '@site/static/img/event-funnel/event-clickonupdate.png';
+import EventConfirmUpdate from '@site/static/img/event-funnel/event-confirmupdate.png';
+import EventUpdatedView from '@site/static/img/event-funnel/event-updatedview.png';
 
 # Update an Event
 
-### Access Your Botanalytics Dashboard:
+## Navigate to Events Dashboard
 
-Log in to your Botanalytics account and access the dashboard.
+- From the account dashboard, locate the "Events" section under the "Behavior" tab.
+- Click on "Events" to access the events dashboard.
+  <img src={EventDashboard} alt="Event Dashboard" />
 
-<img src={Dashboard} alt="Dashboard" />
+## Access Event Edit Options
 
-### Locate the Events Menu Icon:
+- On the "Events" page, find the event you want to edit.
+- In the top right corner, click on the ellipsis button (three dots).
+  <img src={EventEllipsis} alt="Event Ellipsis" />
 
-Once you're on the dashboard, navigate to the "Behavior" tab. You should see an option labeled "Events." Click on it.
+## Open the Dropdown Menu
 
-<img src={EventsMenuButton} alt="Events Menu Icon" />
+- In the dropdown menu, click on "Edit."
+  <img src={EventClickEdit} alt="Event Click Edit" />
 
-### Access Event Edit Options:
+## Navigate to the Event Edit Page
 
-On the "Events" page, you'll find a list of events. Locate the event you want to edit. In the top right corner of the tab, you'll see an ellipsis button (three dots). Click on this ellipsis button.
+- You will be directed to a new page for editing the selected event.
+  <img src={EventUpdatePage} alt="Event Update Page" />
 
-<img src={EditEventMenu} alt="Edit Event Menu" />
+## Edit Event
 
-### Open the Dropdown Menu:
+- On the event edit page, make the necessary changes. You can edit the event name and add conditions.
+  - Click on the event name to edit it.
+    <img src={EventClicktoUpdateName} alt="Event Click to Update Name" />
+  - After clicking, freely edit the name.
+    <img src={EventUpdatedName} alt="Event Update Name" />
+  - Add a condition by clicking on the "Add Condition" button.
+    <img src={EventAddCondition} alt="Event Add Condition" />
+  - Name the expression by clicking on the name tile.
+    <img src={EventUpdateExpression} alt="Event Update Expression" />
 
-After clicking the ellipsis button, a dropdown menu will appear with various options. Among these options, click on "Edit."
+## Confirm Action
 
-<img src={EditEventButton} alt="Events Edit Button" />
+- Click on the "Update" button to complete the event editing.
+  <img src={EventClickonUpdate} alt="Event Click on Update" />
+- A pop-up will appear, confirming the action. Click on "Update" to proceed.
+<img src={EventConfirmUpdate} alt="Event Confirm Update" />
 
-### Navigate to the Event Edit Page:
+## View Updated Event
 
-Clicking on "Edit" will take you to a new page specifically for editing the selected event.
-
-<img src={EditEventDetailsShown} alt="Event Edit Details Shown" />
-
-### Edit Event:
-On the event edit page, you'll have the option to edit the event. Make any necessary changes to the event. In this case, The name of the event was changed and a condition was added.
-
-<img src={EditedEventShown} alt="Edited Event Shown" />
-
-### Confirm Action:
-
-Click on the "Update" button to complete the editing of the event, After you click on it a pop-up will appear warning you "Updating an Event will result in a loss of old data, Our System will treat it as a new event. Are you sure you want to update the event?", Click on Update to confirm the action. And your event has been successfully edited.
-
-<img src={UpdateEventButton} alt="Update Event Button" />
-
-
+- After confirming, view your updated event on the Events Dashboard.
+  <img src={EventUpdatedView} alt="Event Updated View" />

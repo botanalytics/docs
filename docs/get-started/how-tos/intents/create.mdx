@@ -4,40 +4,87 @@ sidebar_label: Introduce a New Intent to the Platform
 hide_title: true
 ---
 
-import EventsMenuIcon from '@site/static/img/event-funnel/events-menu-icon.png';
-import AddEventButton from '@site/static/img/event-funnel/add-event-button.png';
-import NoEventsYet from '@site/static/img/event-funnel/no-events-yet.png';
-import ConfigureWithIntent from '@site/static/img/event-funnel/configure-with-intent.png';
-import AddNewIntent from '@site/static/img/event-funnel/add-intent.png';
+import EventDashboard from '@site/static/img/event-funnel/event-dashboard.png';
+import EventAddEventButton from '@site/static/img/event-funnel/event-addeventbutton.png';
+import EventNoEventAdd from '@site/static/img/event-funnel/event-noeventadd.png';
+import IntentMatchesExp from '@site/static/img/event-funnel/intent-matchesexp.png';
+import IntentNameTile from '@site/static/img/event-funnel/intent-nametile.png';
+import IntentClicktoAdd from '@site/static/img/event-funnel/intent-clicktoadd.png';
+import IntentClickonAdd from '@site/static/img/event-funnel/intent-clickonadd.png';
+import IntentClickhasIntent from '@site/static/img/event-funnel/intent-clickhasintent.png';
+import FunnelsDashboard from '@site/static/img/event-funnel/funnels-dashboard.png';
+import FunnelClickonAddFunnel from '@site/static/img/event-funnel/funnel-clickonaddfunnel.png';
+import intent11ellipsis from '@site/static/img/event-funnel/intent11-ellipsis.png';
+import intent11clickonedit from '@site/static/img/event-funnel/intent11-clickonedit.png';
+import intent11clickonaddstep from '@site/static/img/event-funnel/intent11-clickonaddstep.png';
+import intent11clicktoupdate from '@site/static/img/event-funnel/intent11clicktoupdate.png';
+import intent11typein from '@site/static/img/event-funnel/intent11typein.png';
 
 # Introduce a New Intent to the Platform
 
+## There are two methods for introducing intent to the platform:
+
+## Method 1: Introducing New Intent via Events Dashboard
+
 ### Navigate to Events Dashboard
 
-Log in to your Botanalytics account. From the account dashboard, locate the "Events" section under the "Behavior" tab. Click on "Events" to access the events dashboard.
+- Go to the "Events" section under the "Behavior" tab on your account dashboard.
+- Click on "Events" to access the events dashboard.
+  <img src={EventDashboard} alt="Funnels Dashboard" />
 
-<img src={EventsMenuIcon} alt="Events Menu Icon" />
+### Locate and Click "Add Event"
 
-### Locate Add Event Button
+- Find the "Add Event" button at the top right corner of the events dashboard.
+- Click on it to proceed.
+  <img src={EventAddEventButton} alt="Event Add Event Button" />
 
-At the top right corner of the events dashboard, you'll find an "Add Event" button. Click on it.
+- If you don't have any events yet, locate and click the "Add Event" button.
+  <img src={EventNoEventAdd} alt="Event No Event Add" />
 
-<img src={AddEventButton} alt="Add Event Button" />
+### Configure Event with Intent
 
-Or If you dont have any events yet. Find the "Add Event" button and click it.
+- Click on "Matches Expression" to reveal a dropdown menu.
+  <img src={IntentMatchesExp} alt="Intent Matches Exp" />
 
-<img src={NoEventsYet} alt="No Events Yet" />
-
-###  Configure Event with Intent
-
-Click on "Matches Expression" to reveal a dropdown menu. Select "Has Intent" from the list.
-
-<img src={ConfigureWithIntent} alt="Configure With Intent" />
+- Select "Has Intent" from the list.
+  <img src={IntentClickhasIntent} alt="Intent Click has Intent" />
 
 ### Adding a New Intent
 
-If the intent is not available, you can define a new intent. Type in the name of the new intent in the provided space. Click "Add" to include the new intent.
+- Click on "Select intent or Type intent name to add" to see available intents.
+  <img src={IntentNameTile} alt="Intent Name Tile" />
 
-<img src={AddNewIntent} alt="Add New Intent" />
+- If the intent is not available, type its name in the provided space.
+- Click "Add" to include the new intent.
+  <img src={IntentClicktoAdd} alt="Intent Click to Add" />
 
-You have successfully created a new intent in Botanalytics.
+
+You have successfully introduced a new intent.
+
+
+## Method 2: Introducing New Intent via Funnels Dashboard
+
+### Navigate to Funnels Dashboard
+
+- Go to the "Behaviors" tab and click on "Funnels" in the navigation menu.
+  <img src={FunnelsDashboard} alt="Funnels Dashboard" />
+
+### Access Funnel Edit Page
+
+- Click on the ellipsis at the top right side of the tab.
+  <img src={intent11ellipsis} alt="intent11ellipsis" />
+
+- Select "Edit" to open the edit tab.
+  <img src={intent11clickonedit} alt="intent11clickonedit" />
+
+### Add Step or Type Intent Name to Add Step
+
+- Click on "Add step or add intent name to add" to see available intents.
+  <img src={intent11clickonaddstep} alt="intent11clickonaddstep" />
+
+- If the intent is not available, type its name in the provided space.
+- Click "Add" to include the new intent.
+  <img src={intent11typein} alt="intent11typein" />
+
+You have successfully added a new intent.
+

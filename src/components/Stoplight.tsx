@@ -1,6 +1,7 @@
 import React from "react";
 import { API } from "@stoplight/elements";
 import styles from "./Stoplight.module.scss";
+//import RunInPostmanButton from './RunInPostmanButton';
 
 interface StoplightProps {
   apiDescriptionUrl: string;

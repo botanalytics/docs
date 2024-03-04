@@ -4,13 +4,20 @@ sidebar_label: Monthly
 hide_title: true
 ---
 
-## Active Users Monthly
+import ActivityActiveUsersMonthly from '@site/static/img/metrics/Activity-ActiveUsersMonthly.png';
 
-Monthly Active Users (MAU) for a chatbot is a metric that measures the number of unique users who actively engage with the chatbot over the course of a month. It provides insights into the chatbot's popularity and user engagement on a monthly basis. Here's a detailed explanation of Monthly Active Users for a chatbot:
+
+## Monthly Active Users (MAU)
+
+Monthly Active Users (MAU) for a chatbot is a metric that measures the number of unique users who actively engage with the chatbot over the course of a month. It provides insights into the chatbot's popularity and user engagement on a monthly basis.
 
 ### Definition
 
-Monthly Active Users (MAU) represents the count of distinct users who interact with the chatbot at least once during a calendar month.
+MAU represents the count of distinct users who interact with the chatbot at least once during a calendar month.
+
+
+   <img src={ActivityActiveUsersMonthly} alt="ActivityActiveUsersMonthly" />
+
 
 ### Key Components
 
@@ -75,5 +82,7 @@ By monitoring MAU, businesses can identify trends and take proactive steps to re
 #### Product Development
 
 MAU insights can inform product development efforts by highlighting areas where chatbot features or content need improvement to maintain or grow user engagement.
+
+### Summary
 
 In summary, Monthly Active Users (MAU) for a chatbot is a key metric that quantifies how many unique users actively engage with the chatbot on a monthly basis. It plays a crucial role in assessing user engagement, monitoring growth, and optimizing the chatbot's performance and content over a longer time frame.

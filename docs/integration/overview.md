@@ -11,6 +11,7 @@ This section is written to guide you through integration steps for the channel o
 For the following channels, we *recommend* you to use a **native no-code integration**:
 
 * [*Facebook Messenger*](no-code/facebook-messenger)
+* *Whatsapp Business* **(soon)** 
 * *Salesforce Einstein Bots* **(soon)** 
 
 If your channel is not listed above, it is *recommended* to use our **software development kits (SDKs)** for the programming language of choice:

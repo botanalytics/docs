@@ -4,9 +4,17 @@ sidebar_label: Grid
 hide_title: true
 ---
 
+import AcquisitonCohortsgrid from '@site/static/img/metrics/AcquisitonCohorts-grid.png';
+
+
 ## Acquisition Cohorts Grid
 
-A "Retention by Acquisition Cohorts Grid" is a data analysis and visualization technique used to track and compare user retention rates over time, based on the cohorts of users acquired during specific time periods. In the context of a chatbot, this grid helps you understand how effectively your chatbot is retaining users who were acquired during different time frames. Here's an explanation of the Retention by Acquisition Cohorts Grid for both 7 and 30 days:
+A "Retention by Acquisition Cohorts Grid" is a data analysis and visualization technique used to track and compare user retention rates over time, based on the cohorts of users acquired during specific time periods. In the context of a chatbot, this grid helps you understand how effectively your chatbot is retaining users who were acquired during different time frames. 
+
+   <img src={AcquisitonCohortsgrid} alt="AcquisitonCohortsgrid" />
+
+
+Here's an explanation of the Retention by Acquisition Cohorts Grid for both 7 and 30 days:
 
 ### Retention by Acquisition Cohorts Grid
 
@@ -59,5 +67,7 @@ The grid helps you identify trends and patterns over time. For example, you migh
 By analyzing the grid, you can make informed decisions about when and how to acquire users, as well as how to improve user retention strategies.
 
 The 7-day and 30-day grids provide insights into short-term and longer-term retention, respectively, allowing you to assess user engagement over different time horizons.
+
+### Summary
 
 In summary, the Retention by Acquisition Cohorts Grid for 7 and 30 days in a chatbot context helps you track and compare user retention rates for different cohorts of users. It's a valuable tool for assessing the effectiveness of your chatbot's user acquisition and retention strategies over time.

@@ -4,11 +4,20 @@ sidebar_label: Trends
 hide_title: true
 ---
 
+
+import SessionCountTrends from '@site/static/img/metrics/SessionCount-Trends.png';
+
+
 ## Session Count Trends
 
-A Session Count Trends graph for a chatbot is a visual representation that tracks and displays changes in the number of [*sessions*](/docs/get-started/what-are/conversations) initiated by users over a period of time. This graph provides insights into how user interaction patterns evolve and whether there are trends in the frequency of user sessions with the chatbot. 
+A Session Count Trends graph for a chatbot is a visual representation that tracks and displays changes in the number of sessions initiated by users over a period of time. This graph provides insights into how user interaction patterns evolve and whether there are trends in the frequency of user sessions with the chatbot.
 
-Here's how to interpret and understand a Session Count Trends graph for a chatbot
+
+
+   <img src={SessionCountTrends} alt="SessionCountTrends" />
+
+
+Here's how to interpret and understand a Session Count Trends graph for a chatbot:
 
 ### X-Axis (Time Period)
 
@@ -36,15 +45,15 @@ The overall direction of the trend line is critical. An upward trend in session 
 
 Seasonal or recurring patterns in session count trends can be observed. For example, if there are weekly or monthly spikes in session counts, it may be related to certain events or user behaviors.
 
-#### Anomalies 
+#### Anomalies
 
 Sudden spikes or drops in session counts can indicate unusual user behavior, chatbot performance issues, or specific events that require further investigation.
 
-#### Correlation with Changes 
+#### Correlation with Changes
 
 It's important to correlate trends with specific changes in the chatbot, such as updates to content, features, or marketing efforts. A notable change in session count trends after an update can provide valuable insights.
 
-#### User Engagement 
+#### User Engagement
 
 Understanding session count trends helps gauge overall user engagement with the chatbot. An increase in session counts may indicate that users are finding more value in their interactions.
 
@@ -54,7 +63,7 @@ Analyzing trends over time can help chatbot developers identify areas for improv
 
 ### Use Cases for Session Count Trends Analysis
 
-#### Performance Evaluation 
+#### Performance Evaluation
 
 Monitoring session count trends helps assess the effectiveness and performance of the chatbot in attracting and retaining user engagement.
 
@@ -62,7 +71,7 @@ Monitoring session count trends helps assess the effectiveness and performance o
 
 Trends analysis can guide content optimization efforts to ensure that the chatbot provides valuable information efficiently.
 
-#### User Experience Enhancement 
+#### User Experience Enhancement
 
 Insights from session count trends can lead to improvements in the chatbot's user experience, making it more engaging and user-friendly.
 
@@ -73,5 +82,7 @@ Marketers can use session count trends to measure the effectiveness of promotion
 #### A/B Testing
 
 When conducting A/B tests with different versions of the chatbot, session count trends can be used as a key metric to evaluate which version attracts more user interactions.
+
+### Summary
 
 In summary, a Session Count Trends graph for a chatbot provides a visual representation of how user interaction patterns change over time. It offers valuable insights into user engagement and the chatbot's performance, guiding developers and operators in optimizing the chatbot's design and content to enhance the user experience.

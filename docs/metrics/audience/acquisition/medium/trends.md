@@ -4,9 +4,18 @@ sidebar_label: Trends
 hide_title: true
 ---
 
+import AcquisitionMediumTrends from '@site/static/img/metrics/Acquisition-MediumTrends.png';
+
+
 ## Acquisition Medium Trends
 
-An Acquisition Medium Trends Graph for a chatbot is a visual representation that displays changes and patterns in the effectiveness of various user acquisition mediums or channels over time. It provides insights into how different mediums have performed in attracting and introducing users to the chatbot. Here's an explanation of the key elements and significance of an Acquisition Medium Trends Graph:
+An Acquisition Medium Trends Graph for a chatbot is a visual representation that displays changes and patterns in the effectiveness of various user acquisition mediums or channels over time. It provides insights into how different mediums have performed in attracting and introducing users to the chatbot. 
+
+
+   <img src={AcquisitionMediumTrends} alt="AcquisitionMediumTrends" />
+
+
+Here's an explanation of the key elements and significance of an Acquisition Medium Trends Graph:
 
 ### Key Elements
 
@@ -28,7 +37,7 @@ The graph typically consists of multiple lines or bars, each representing a diff
 
 The graph helps in identifying trends and patterns in user acquisition through various mediums. You can see if certain mediums have become more or less effective over time.
 
-#### Medium Performance Assessment 
+#### Medium Performance Assessment
 
 By visually comparing the lines or bars representing different mediums, you can assess which mediums have consistently performed well and which might require adjustments.
 
@@ -75,5 +84,7 @@ The data informs decisions about where to allocate resources and budget for user
 #### Adaptation to User Behavior
 
 By understanding how users' preferences for different mediums change, companies can adapt their strategies to stay aligned with user behavior.
+
+### Summary
 
 In summary, an Acquisition Medium Trends Graph for a chatbot provides historical data on how different user acquisition mediums or channels have performed over time, helping businesses adapt and optimize their marketing strategies based on evolving medium trends.

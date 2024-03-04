@@ -5,33 +5,32 @@ hide_title: true
 ---
 
 
-import EventsMenuButton from '@site/static/img/event-funnel/events-menu-icon.png';
-import AlertEnabledEvent from '@site/static/img/event-funnel/alert-enabled-event.png';
-import DisableEventButton from '@site/static/img/event-funnel/disable-event-button.png';
-import EventDisabledAlert from '@site/static/img/event-funnel/disabled-event.png';
+import EventDashboard from '@site/static/img/event-funnel/event-dashboard.png';
+import EventDisableAlertDashboard from '@site/static/img/event-funnel/event-disablealertdashboard.png';
+import EventDisableAlert from '@site/static/img/event-funnel/event-disablealert.png';
+import EventEnableAlertDashboard from '@site/static/img/event-funnel/event-enablealertdashboard.png';
+import EventEnableAlert from '@site/static/img/event-funnel/event-enablealert.png';
 
 # Disable Alert for an Event
 
 ### Navigate to Events Dashboard
-
-Log in to your Botanalytics account. From the account dashboard, locate the "Events" section under the "Behavior" tab. Click on "Events" to access the events dashboard.
-
-<img src={EventsMenuButton} alt="Events Menu Icon" />
+- From the account dashboard, locate the "Events" section under the "Behavior" tab.
+- Click on "Events" to access the events dashboard.
+  <img src={EventDashboard} alt="Event Dashboard" />
 
 ### Event List
 
-You'll be directed to the "Events" page with the list of events. Locate the specific event for which you previously enabled alerts.
+- You'll be directed to the "Events" page with the list of events.
+- Locate the specific event for which you previously enabled alerts.
+  <img src={EventDisableAlertDashboard} alt="Event Disable Alert Dashboard" />
 
-<img src={AlertEnabledEvent} alt="Events Enabled Alerts" />
+### Disable Alerts for the Event
 
-### Disable Alerts for the Event:
+- Once you've found the event, in the top right corner of the event's listing, you'll see a bell-shaped icon.Click on the bell-shaped icon associated with the event to disable the Alert.
+  <img src={EventDisableAlert} alt="EventDisableAlert" />
 
-Once you've located the event with alerts enabled, in the top right corner of the event's listing, you'll now see the bell icon with alerts activated.
+### View Disabled Alert
 
-<img src={DisableEventButton} alt="Events Enabled Alerts" />
+- After clicking the bell icon, event alerts are disabled, marked by the icon changing from orange to black.
 
-### Click the Bell Icon Again:
-
-Click on the bell-shaped icon associated with the event that has alerts enabled. This action will disable alerts for the event.
-
-<img src={EventDisabledAlert} alt="Event Disabled Alert" />
+  <img src={EventEnableAlert} alt="Event Enable Alert" />

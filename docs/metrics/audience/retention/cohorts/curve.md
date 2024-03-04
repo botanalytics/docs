@@ -4,13 +4,22 @@ sidebar_label: Curve
 hide_title: true
 ---
 
+import AcquisitionCohortsCurve from '@site/static/img/metrics/AcquisitionCohorts-Curve.png';
+
+
 ## Acquisition Cohorts Curve
 
-A "Retention by Acquisition Cohorts Curve" is a data visualization that illustrates how user retention rates evolve over time for different cohorts of users who were acquired during specific time periods. This curve provides insights into how effectively a chatbot is retaining users over the course of 7 and 30 days after their initial acquisition. Here's an explanation of the Retention by Acquisition Cohorts Curve for both 7 and 30 days:
+A "Retention by Acquisition Cohorts Curve" is a data visualization that illustrates how user retention rates evolve over time for different cohorts of users who were acquired during specific time periods. This curve provides insights into how effectively a chatbot is retaining users over the course of 7 and 30 days after their initial acquisition. 
+
+
+   <img src={AcquisitionCohortsCurve} alt="AcquisitionCohortsCurve" />
+
+
+Here's an explanation of the Retention by Acquisition Cohorts Curve for both 7 and 30 days:
 
 ### 7-Day Retention by Acquisition Cohorts Curve
 
-#### X-Axis 
+#### X-Axis
 
 The x-axis represents time, specifically the number of days since users were initially acquired. It typically ranges from 0 days (the day users were acquired) to 7 days.
 
@@ -51,5 +60,7 @@ The 30-day curve offers insights into longer-term retention, allowing you to ass
 By analyzing these curves, you can identify cohorts with particularly strong or weak retention and tailor your user engagement strategies accordingly.
 
 Monitoring these curves over time enables you to track the effectiveness of your user retention efforts and make data-driven decisions to improve user engagement.
+
+### Summary
 
 In summary, Retention by Acquisition Cohorts Curves for 7 and 30 days in a chatbot context provide a visual representation of how user retention rates change over time for different cohorts of users. These curves help you assess the effectiveness of your chatbot's user retention strategies and make adjustments to improve user engagement and satisfaction.

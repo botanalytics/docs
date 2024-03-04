@@ -4,9 +4,18 @@ sidebar_label: Trends
 hide_title: true
 ---
 
+
+import AcquisitionCampaignTrends from '@site/static/img/metrics/Acquisition-CampaignTrends.png';
+
+
 ## Acquisition Campaign Trends
 
-An Acquisition Campaign Trends Graph for a chatbot is a visual representation that displays changes and patterns in the effectiveness of various marketing campaigns or initiatives over time in terms of driving user acquisition. It provides a dynamic view of how different campaigns have performed in attracting and introducing users to the chatbot. Here's an explanation of the key elements and significance of an Acquisition Campaign Trends Graph:
+An Acquisition Campaign Trends Graph for a chatbot is a visual representation that displays changes and patterns in the effectiveness of various marketing campaigns or initiatives over time in terms of driving user acquisition. It provides a dynamic view of how different campaigns have performed in attracting and introducing users to the chatbot. 
+
+   <img src={AcquisitionCampaignTrends} alt="AcquisitionCampaignTrends" />
+
+
+Here's an explanation of the key elements and significance of an Acquisition Campaign Trends Graph:
 
 ### Key Elements
 
@@ -60,7 +69,7 @@ It's essential to interpret the trends in the graph accurately. A declining tren
 
 ### Use Cases
 
-#### Marketing Strategy Optimization 
+#### Marketing Strategy Optimization
 
 Marketing teams use Acquisition Campaign Trends Graphs to refine and adjust their strategies based on changing user acquisition patterns.
 
@@ -75,5 +84,7 @@ The data informs decisions about where to allocate resources and budget for user
 #### Adaptation to User Behavior
 
 By understanding how users' preferences for different campaigns change, companies can adapt their strategies to stay aligned with user behavior.
+
+### Summary
 
 In summary, an Acquisition Campaign Trends Graph for a chatbot is a visual tool that displays changes in the effectiveness of marketing campaigns over time, helping businesses adapt and optimize their marketing strategies based on evolving user acquisition trends.

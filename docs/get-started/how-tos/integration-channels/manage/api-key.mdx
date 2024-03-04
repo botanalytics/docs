@@ -1,116 +1,86 @@
 ---
 sidebar_position: 2
 ---
-
-import Dashboard from '@site/static/img/dashboard.png';
-import GoToProjectList from '@site/static/img/projects/go-to-list.png';
-import ProjectSettings from '@site/static/img/projects/settings.png';
-import ProjectSettingsChannelsTab from '@site/static/img/projects/channels-tab.png';
-import ProjectListChannels from '@site/static/img/projects/rasa-added-list.png';
-import IntegrationChannelSelect from '@site/static/img/projects/integration-channel-select.png';
-import ChannelRegenerate from '@site/static/img/projects/integration-channel-regenerate.png';
-import ChannelRegenerateConfirm from '@site/static/img/projects/channel-regenerate-confirm.png';
-import ProjectLocate from '@site/static/img/projects/locate.png';
-import ProjectMenu from '@site/static/img/projects/menu-icon.png';
-
-# Re-generate API Key for an Integration Channel 
-
-There are two Methods for regenerating the API key:
-
-## Method 1: Regenerating API Key from the Account Dashboard
+import DashboardActiveProject from '@site/static/img/projects/dashboardactiveproject.png';
+import DashboardClickProjectSettings from '@site/static/img/projects/dashboard-clickprojectsettings.png';
+import ChannelsChannelsTab from '@site/static/img/projects/channels-channelstab.png';
+import ProjectClickLogo from '@site/static/img/projects/project-clicklogo.png';
+import ProjectViewTile from '@site/static/img/projects/project-viewtile.png';
+import ProjectClickEllipsis from '@site/static/img/projects/project-clickellipsis.png';
+import ProjectClickSettings  from '@site/static/img/projects/project-clicksettings.png';
+import RegenClickIntChannel  from '@site/static/img/projects/regen-clickintchannel.png';
+import RegenIntClickRegen from '@site/static/img/projects/regen-intclickregen.png';
+import RegenIntConfirm from '@site/static/img/projects/regen-intconfirm.png';
+import RegenIntView from '@site/static/img/projects/regen-intview.png';
 
 
-### Access Project Settings
-
-In the account dashboard, click on the name of your active project. A drop-down menu will appear.
-
-<img src={Dashboard} alt="Dashboard" />
-
-### Click on "Project Settings"
-
-From the drop-down menu, click on "Project Settings" to access the settings page for the active project.
-
-<img src={ProjectSettings} alt="Project Settings" />
-
-### Navigate to the Channels Tab
-
-In the project settings page, navigate to the "Channels" tab. This tab contains a list of all connected channels.
-
-<img src={ProjectSettingsChannelsTab} alt="Project Settings Channels" />
-
-<img src={ProjectListChannels} alt="Project List Channels" />
 
 
-### Select the Integration Channel to Regenerate API Key
+# Re-generate API Key for an Integration Channel
 
-Click on the specific integration channel for which you want to regenerate the API key. This will open the channel's settings.
+## There are two methods for regenerating API key for a channel:
 
-<img src={IntegrationChannelSelect} alt="Project Settings Channel Select" />
+## Method 1: Regenerating from the accounts dashboard
 
-### Regenerate the API Key
+### Access Dropdown Menu 
 
-In the integration channel's settings page, look for the "Regenerate" button on the right side. Click on this button to regenerate the API key for the selected integration channel.
-
-<img src={ChannelRegenerate} alt="Project Settings Integration Channel Regenerate" />
-
-### Confirm Regeneration
-
-A prompt will appear, asking you to confirm if you want to regenerate the API key. Click on  "Regenerate" to proceed.
-
-<img src={ChannelRegenerateConfirm} alt="Project Settings Channel Regenerate Confirm" />
-
-### New API Key.
-
-After confirming, the API key for the selected channel will be regenerated, and a new unique API key will be generated for that channel.
-
-
-## Method 2: Regenerating API Key from the Projects Dashboard.
-
-### Go to the Projects Dashboard
-
-Click on the Botanalytics logo in the top left corner to access the projects dashboard.
-
-<img src={GoToProjectList} alt="Go to Project List" />
-
-### Locate the Project
-
-In the projects dashboard, find the project for which you want to regenerate the API key.
-
-<img src={ProjectLocate} alt="Project Locate" />
+- In your account dashboard, locate the name of your active project.
+- Click on the project name to access the dropdown menu.
+  <img src={DashboardActiveProject} alt="Dashboard Active Project" />
 
 ### Access Project Settings
+- On the dropdown menu click on Project settings to take you to the project settings page.
+  <img src={DashboardClickProjectSettings} alt="Dashboard Click Project Settings" />
 
-Click on the ellipsis icon (three dots) in the top right corner of the project tile. A drop-down menu with "Settings" will appear. Click on "Settings."
+### Navigate to Channels
+- In the settings window, you will see different sections, including "General" and "Channels."
+- Click on "Channels" to manage your connected channels.
+  <img src={ChannelsChannelsTab} alt="ChannelsChannelsTab" />
 
-<img src={ProjectMenu} alt="Project Menu" />
-
-### Navigate to the Channels Tab
-
-In the project settings page, navigate to the "Channels" tab. This tab contains a list of all connected channels.
-
-<img src={ProjectSettingsChannelsTab} alt="Project Settings Channels" />
-
-<img src={ProjectListChannels} alt="Project List Channels" />
-
-### Select the Integration Channel to Regenerate API Key
-
-Click on the specific integration channel for which you want to regenerate the API key. This will open the channel's settings.
-
-<img src={IntegrationChannelSelect} alt="Project Settings Channel Select" />
+### Select the Channel to Regenerate API Key
+- Click on the specific Integration channel for which you want to regenerate the API key. This will open the channel's settings.
+  <img src={RegenClickIntChannel} alt="Regen Click Int Channel" />
 
 ### Regenerate the API Key
-
-In the integration channel's settings page, look for the "Regenerate" button on the right side. Click on this button to regenerate the API key for the selected integration channel.
-
-<img src={ChannelRegenerate} alt="Project Settings Integration Channel Regenerate" />
+- In the channel's settings, look for the "Regenerate" button on the right side. Click on this button to regenerate the API key for the selected Integration channel.
+  <img src={RegenIntClickRegen} alt="Regen Int Click Regen" />
 
 ### Confirm Regeneration
+- A prompt will appear, asking you to confirm if you want to regenerate the API key. Click on "Regenerate" to proceed.
+  <img src={RegenIntConfirm} alt="Regen Int Confirm" />
 
-A prompt will appear, asking you to confirm if you want to regenerate the API key. Click on  "Regenerate" to proceed.
+### New API Key
+- After confirming, the API key for the selected Integration channel will be regenerated, and a new unique API key will be generated for that Integration channel.
+  <img src={RegenIntView} alt="Regen Int View" />
 
-<img src={ChannelRegenerateConfirm} alt="Project Settings Channel Regenerate Confirm" />
 
-### New API Key.
+## Method 2: Regenerating from the Projects Dashboard
 
-After confirming, the API key for the selected channel will be regenerated, and a new unique API key will be generated for that channel.
+### Access the Dashboard
+- Click on the Botanalytics logo in the top left corner to access the Projects dashboard.
+  <img src={ProjectClickLogo} alt="Project Click Logo" />
 
+### Access Project Settings
+- In the Projects dashboard, locate the project you want to add a new Integration channel to.
+  <img src={ProjectViewTile} alt="Projects View Tile" />
+
+### Navigate to Channels
+- In the settings window, you will see different sections, including "General" and "Channels."
+- Click on "Channels" to manage your connected channels.
+  <img src={ChannelsChannelsTab} alt="ChannelsChannelsTab" />
+
+### Select the Integration Channel to Regenerate API Key
+- Click on the specific channel for which you want to regenerate the API key. This will open the channel's settings.
+  <img src={RegenClickIntChannel} alt="Regen Click Int Channel" />
+
+### Regenerate the API Key
+- In the channel's settings, look for the "Regenerate" button on the right side. Click on this button to regenerate the API key for the selected Integration channel.
+  <img src={RegenIntClickRegen} alt="Regen Int Click Regen" />
+
+### Confirm Regeneration
+- A prompt will appear, asking you to confirm if you want to regenerate the API key. Click on "Regenerate" to proceed.
+  <img src={RegenIntConfirm} alt="Regen Int Confirm" />
+
+### New API Key
+- After confirming, the API key for the selected channel will be regenerated, and a new unique API key will be generated for that channel.
+  <img src={RegenIntView} alt="Regen Int View" />

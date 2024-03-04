@@ -4,11 +4,15 @@ sidebar_label: New Users
 hide_title: true
 ---
 
+import NewUsers from '@site/static/img/metrics/NewUsers.png';
+
+
 ## New Users
 
-A "New Users" line graph for a chatbot, where the Y-axis represents the number of new users, and the X-axis indicates weekdays starting from one week ago's date (Wednesday, September 12) and ending on Tuesday (September 19) for today's date, provides insights into user acquisition trends over the past week. 
+A "New Users" line graph for a chatbot, where the Y-axis represents the number of new users, and the X-axis indicates weekdays starting from Monday, January 1st, and ending on Sunday, January 7th, provides insights into user acquisition trends over the past week.
 
-Here's an explanation of this specific graph
+   <img src={NewUsers} alt="NewUsers" />
+
 
 ### Y-Axis (Number of Users)
 
@@ -16,7 +20,7 @@ The Y-axis represents the number of new users who have engaged with the chatbot 
 
 ### X-Axis (Weekdays)
 
-The X-axis displays the weekdays over the past week, as an example If you are viewing the graph on September 19th it will show starting from Wednesday (September 12), and progressing through Thursday, Friday, Saturday, Sunday, Monday, and ending on Tuesday (September 19). Each day corresponds to a data point on the graph.
+The X-axis displays the weekdays over the past week, starting from Monday, January 1st, and progressing through Tuesday, Wednesday, Thursday, Friday, Saturday, and ending on Sunday, January 7th. Each day corresponds to a data point on the graph.
 
 ### Line Graph
 
@@ -48,8 +52,10 @@ You can compare the current week's data with data from previous weeks to identif
 
 If you notice fluctuations in new user acquisition, consider adjusting your user engagement strategies or onboarding processes accordingly.
 
-#### Data-Driven Decision-Making
+#### Data-Driven Decision-making
 
 The graph provides actionable data for making informed decisions related to user acquisition and chatbot performance improvement.
+
+### Summary
 
 In summary, a "New Users" line graph for a chatbot, focusing on the past week's data, helps chatbot developers, marketers, and administrators gain insights into user acquisition trends. This information guides decision-making processes related to resource allocation, user engagement, and marketing efforts.

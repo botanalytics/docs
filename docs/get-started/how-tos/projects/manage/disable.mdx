@@ -1,87 +1,82 @@
 ---
 sidebar_position: 8
 ---
-
-import Dashboard from '@site/static/img/dashboard.png';
-import GoToProjectList from '@site/static/img/projects/go-to-list.png';
-import ProjectSettings from '@site/static/img/projects/settings.png';
+import ProjectClickLogo from '@site/static/img/projects/project-clicklogo.png';
+import DashboardActiveProject from '@site/static/img/projects/dashboardactiveproject.png';
+import DashboardProjectSettings from '@site/static/img/projects/dashboard-projectsettings.png';
+import EnableViewTile from '@site/static/img/projects/enable-viewtile.png';
+import DisableClickonEllipsis from '@site/static/img/projects/disable-clickonellipsis.png';
+import ProjectClickSettings  from '@site/static/img/projects/project-clicksettings.png';
 import ProjectMenu from '@site/static/img/projects/menu-icon.png';
-import ProjectSettingsGeneralTab from '@site/static/img/projects/general-tab.png';
-import ProjectSettingsGeneralTabDisableButton from '@site/static/img/projects/disable-button.png';
-import ProjectSettingsGeneralTabDisableConfirm from '@site/static/img/projects/disable-confirm.png';
-import ProjectListDisableButton from '@site/static/img/projects/list-disable-button.png';
+import DisableGeneralTabb from '@site/static/img/projects/disable-generaltabb.png';
+import DisableGeneralClickDisable from '@site/static/img/projects/disable-generalclickdisable.png';
+import DisableClickConfirm from '@site/static/img/projects/disable-clickconfirm.png';
+import DisableViewTile from '@site/static/img/projects/disable-viewtile.png';
+import DisableSelectDisable1 from '@site/static/img/projects/disable-selectdisable1.png';
 
 # Disable a Project
 
-There are two Methods to disable a project
+## There are two Methods to disable a project:
 
-## Method 1: Disabling Project from the Account Dashboard
+## Method 1: Disabling Project from the dropdown menu
 
-### Access Project Settings
+### Access Dropdown Menu 
 
-In the account dashboard, click on the name of your active project. A drop-down menu will appear.
+   - In your account dashboard, locate the name of your active project.
+   - Click on the project name to access the dropdown menu.
+   <img src={DashboardActiveProject} alt="Dashboard Active Project" />
 
-<img src={Dashboard} alt="Dashboard" />
+### Access Project Settings Page
 
-### Click on "Project Settings"
-
-From the drop-down menu, click on "Project Settings" to access the settings page for the active project.
-
-<img src={ProjectSettings} alt="Project Settings" />  
+   - On the dropdown menu, click on Project settings to access the project settings page.
+   <img src={DashboardProjectSettings} alt="Dashboard Project Settings" />
 
 ### Navigate to the "General" Tab
 
-Placeholder: Screenshot or description of navigating to the "General" tab
-
-In the project settings, navigate to the "General" tab.
-
-<img src={ProjectSettingsGeneralTab} alt="Project Settings General Tab" /> 
-
-Under the "General" tab, look for the "Danger Zone" section.
+   - In the project settings page, navigate to the "General" tab.
+   <img src={DisableGeneralTabb} alt="Disable General Tabb" /> 
 
 ### Disable the Project
 
-In the "Danger Zone," you will find a button labeled "Disable This Project." Click on the "Disable This Project" button.
-
-<img src={ProjectSettingsGeneralTabDisableButton} alt="Project Settings General Tab Disable Button" /> 
+   - Under the "General" tab, look for the "Danger Zone" section.
+   - In the "Danger Zone," you will find a button labeled "Disable This Project." Click on the "Disable This Project" button.
+   <img src={DisableGeneralClickDisable} alt="Disable General Click Disable" /> 
 
 ### Confirm the Action
 
-A prompt will pop up, asking you to confirm if you want to disable the project and stop receiving updates.
-Click on "Disable This Project" in the prompt to finalize the action.
-
-<img src={ProjectSettingsGeneralTabDisableConfirm} alt="Project Settings General Tab Disable Confirm" /> 
-
+   - A prompt will pop up, asking you to confirm if you want to disable the project and stop receiving updates.
+   - Click on "Disable This Project" in the prompt to finalize the action. Once you confirm this action, the project will be disabled, and you will be taken to the projects dashboard.
+   <img src={DisableClickConfirm} alt="Disable Click Confirm" /> 
+   <img src={DisableViewTile} alt="Disable ViewTile" /> 
 
 You have successfully disabled the project in Botanalytics.
-The project will no longer receive updates or new data.
+The Project will no longer receive updates or new data. The Disabled Project will be displayed at the bottom of the projects dashboard.
 Please note that disabling a project will stop it from receiving updates, and you will not be able to view new data associated with that project. The project will still be listed in your account, but it will be inactive until you choose to [enable it again.](/docs/basics/how-tos/projects/enable)
 
 ## Method 2: Disabling Project from the Projects Dashboard
 
 ### Go to the Project Dashboard
 
-Click on the Botanalytics logo in the top left corner to access the project dashboard.
-
-<img src={GoToProjectList} alt="Go to Project List" />
+   - Click on the Botanalytics logo in the top left corner to access the project dashboard.
+   <img src={ProjectClickLogo} alt="Project Click Logo" />
 
 ### Select the Project to Disable
 
-In the project dashboard, locate the project you wish to disable.
+   - Locate the project you wish to disable in the project dashboard.
+   <img src={EnableViewTile} alt="Enable View Tile" />
 
-### Access Project Settings
+### Access Project Settings Page 
 
-After locating the project you wish to disable, click on the three dots (ellipsis) icon in the top right corner to display a drop-down menu.
-From the drop-down menu, select "Settings."
-
-<img src={ProjectMenu} alt="Project Menu" />
+   - Click on the three dots (ellipsis) icon in the top right corner to display a drop-down menu.
+   - From the drop-down menu, locate "Disable Project."
+   <img src={DisableClickonEllipsis} alt="Disable Click on Ellipsis" />
 
 ### Disable the Project
 
-Click on the "Disable project" menu button.
-
-<img src={ProjectListDisableButton} alt="Project List Disable Button" />
+   - Click on the "Disable project" button. Once you confirm the project will be disabled.
+   <img src={DisableSelectDisable1} alt="Disable Select Disable1" />
+   <img src={DisableViewTile} alt="Disable ViewTile" /> 
 
 You have successfully disabled the project in Botanalytics.
-The project will no longer receive updates or new data.
-Please note that disabling a project will stop it from receiving updates, and you will not be able to view new data associated with that project. The project will still be listed in your account, but it will be inactive until you choose to [enable it again.](/docs/basics/how-tos/projects/enable)
+The Project will no longer receive updates or new data. The Disabled Project will be displayed at the bottom of the projects dashboard.
+Please note that disabling a project will stop it from receiving updates, and you will not be able to view new data associated with that project. The project will still be listed in your account, but it will be inactive until you choose to [enable it again.](/docs/get-started/how-tos/projects/manage/enable)

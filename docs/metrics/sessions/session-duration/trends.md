@@ -3,72 +3,84 @@ sidebar_position: 2
 sidebar_label: Trends
 hide_title: true
 ---
+
+import SessionDurationTrends from '@site/static/img/metrics/SessionDuration-Trends.png';
+
+
 ## Session Duration Trends
 
-A Session Duration Trends graph for a chatbot is a visual representation that tracks and displays changes in the durations of user [*sessions*](/docs/get-started/what-are/conversations) with the chatbot over a period of time. This graph helps chatbot developers, operators, and analysts monitor and analyze how user interaction patterns evolve and whether there are trends in session length. Here's how to interpret and understand a Session Duration Trends graph for a chatbot:
+A Session Duration Trends graph for a chatbot tracks and displays changes in the durations of user sessions with the chatbot over a specified period. This graph aids chatbot developers, operators, and analysts in monitoring and analyzing evolving user interaction patterns and session length trends. 
+
+   <img src={SessionDurationTrends} alt="SessionDurationTrends" />
+
+
+
+Here's how to interpret and understand a Session Duration Trends graph for a chatbot:
 
 ### X-Axis (Time Period)
 
-The x-axis of the graph represents a specific time period, such as days, weeks, or months, depending on the data's granularity. It shows when the user sessions occurred or were recorded.
+The x-axis represents a specific time period, such as days, weeks, or months, depending on the data's granularity. It indicates when the user sessions occurred or were recorded.
 
 ### Y-Axis (Session Duration)
 
-The y-axis represents the duration of user sessions in the corresponding time period. It measures the average or total session duration for that time frame. The unit of measurement (e.g., seconds, minutes) is indicated on the axis.
+The y-axis denotes the duration of user sessions within the corresponding time period, measuring the average or total session duration for that timeframe. The unit of measurement (e.g., seconds, minutes) is specified on the axis.
 
 ### Data Points
 
-Each data point on the graph represents the average or total session duration for user sessions that occurred during a particular time period. This data is typically collected and aggregated over time.
+Each data point on the graph reflects the average or total session duration for user sessions during a particular time period. This data is typically collected and aggregated over time.
 
 ### Trend Line
 
-In a line graph, the trend line connects the data points, providing a visual representation of how session durations change over the specified time frame. An upward trend indicates increasing session durations, while a downward trend suggests decreasing durations.
+In a line graph, the trend line connects the data points, visually representing how session durations change over the specified time frame. An upward trend indicates increasing session durations, while a downward trend suggests decreasing durations.
 
 ### Interpreting a Session Duration Trends Graph for a Chatbot
 
 #### Direction of Trend
 
-The overall direction of the trend line is critical. An upward trend in session duration suggests that users are spending more time engaging with the chatbot, while a downward trend may indicate decreasing user engagement.
+The overall direction of the trend line is crucial. An upward trend in session duration suggests increasing user engagement with the chatbot, while a downward trend may signify decreasing engagement.
 
-#### Periodic Patterns 
+#### Periodic Patterns
 
-Seasonal or recurring patterns in session duration trends can be observed. For example, if there are weekly or monthly peaks, it may be related to certain events or user behaviors.
+Observing seasonal or recurring patterns in session duration trends can provide valuable insights. For instance, weekly or monthly peaks may correlate with specific events or user behaviors.
 
 #### Anomalies
 
-Sudden spikes or drops in session duration can indicate unusual user behavior or chatbot performance issues. These anomalies may require further investigation.
+Sudden spikes or drops in session duration can indicate unusual user behavior or chatbot performance issues, warranting further investigation.
 
 #### Correlation with Changes
 
-It's important to correlate trends with specific changes in the chatbot, such as updates to content, features, or user interface design. A notable change in session duration trends after an update can provide valuable insights.
+Correlating trends with specific changes in the chatbot, such as updates to content or features, helps derive meaningful insights. Significant changes in session duration trends post-update can offer valuable feedback.
 
-#### User Engagement 
+#### User Engagement
 
-Understanding session duration trends helps gauge user engagement. Longer sessions may indicate that users are finding value in the chatbot and are more engaged in the conversations.
+Understanding session duration trends aids in gauging user engagement. Longer sessions typically indicate that users find value in the chatbot and are more engaged in conversations.
 
 #### Opportunities for Improvement
 
-Analyzing trends over time can help chatbot developers identify areas for improvement, such as optimizing responses, enhancing user guidance, or addressing usability issues.
+Analyzing trends over time facilitates identifying areas for improvement, such as optimizing responses, enhancing user guidance, or addressing usability issues.
 
 ### Use Cases for Session Duration Trends Analysis
 
 #### Performance Evaluation
 
-Monitoring session duration trends helps assess the effectiveness and performance of the chatbot in retaining user engagement.
+Monitoring session duration trends assists in evaluating the chatbot's effectiveness and performance in retaining user engagement.
 
 #### Content Optimization
 
-Trends analysis can guide content optimization efforts to ensure that the chatbot provides valuable information efficiently.
+Trends analysis guides efforts to optimize chatbot content, ensuring efficient delivery of valuable information.
 
-#### User Experience Enhancement 
+#### User Experience Enhancement
 
-Insights from session duration trends can lead to improvements in the chatbot's user experience, making it more engaging and user-friendly.
+Insights from session duration trends drive enhancements in the chatbot's user experience, making it more engaging and user-friendly.
 
 #### A/B Testing
 
-When conducting A/B tests with different versions of the chatbot, session duration trends can be used as a key metric to evaluate which version performs better in terms of user engagement.
+Session duration trends serve as a key metric for evaluating different versions of the chatbot in A/B testing scenarios, determining which version performs better in terms of user engagement.
 
 #### Feedback Loop
 
-Session duration trends can be incorporated into the feedback loop for continuous improvement of the chatbot's design and functionality.
+Incorporating session duration trends into the feedback loop facilitates continuous improvement of the chatbot's design and functionality.
 
-In summary, a Session Duration Trends graph for a chatbot provides a visual representation of how user interaction patterns change over time. It offers valuable insights into user engagement and the chatbot's performance, guiding developers and operators in optimizing the chatbot's design and content to enhance the user experience.
+### Summary
+
+In summary, a Session Duration Trends graph for a chatbot visually illustrates how user interaction patterns evolve over time. It offers valuable insights into user engagement and the chatbot's performance, guiding developers and operators in optimizing the chatbot's design and content to enhance the user experience.

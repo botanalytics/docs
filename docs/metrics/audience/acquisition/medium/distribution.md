@@ -3,10 +3,18 @@ sidebar_position: 1
 sidebar_label: Distribution
 hide_title: true
 ---
+import AcquisitionMediumDistribution from '@site/static/img/metrics/Acquisition-MediumDistribution.png';
+
 
 ## Acquisition Medium Distribution
 
-An Acquisition Medium Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different mediums or channels in a horizontal format. It provides a clear view of how many users were acquired through each medium, allowing for easy comparison and identification of the most effective acquisition channels for the chatbot. Here's an explanation of the key elements and significance of an Acquisition Medium Horizontal Distribution Bar Graph:
+An Acquisition Medium Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different mediums or channels in a horizontal format. It provides a clear view of how many users were acquired through each medium, allowing for easy comparison and identification of the most effective acquisition channels for the chatbot. 
+
+   <img src={AcquisitionMediumDistribution} alt="AcquisitionMediumDistribution" />
+
+
+
+Here's an explanation of the key elements and significance of an Acquisition Medium Horizontal Distribution Bar Graph:
 
 ### Key Elements
 
@@ -72,4 +80,6 @@ The data informs decisions about where to allocate resources and budget for user
 
 Data from the graph can guide the adaptation of marketing strategies to match evolving user acquisition trends and preferences.
 
-In summary, an Acquisition Medium Horizontal Distribution Bar Graph for a chatbot visually presents the distribution of user acquisition across different mediums or channels, helping businesses make data-driven decisions about resource allocation and medium optimization in a horizontal format.
+### Summary
+
+In summary, an Acquisition Medium Horizontal Distribution Bar Graph for a chatbot visually presents the distribution of user acquisition across different mediums or channels, helping businesses make data-driven decisions about resource allocation and medium optimization in a horizontal format. 

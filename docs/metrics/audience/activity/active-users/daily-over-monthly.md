@@ -4,12 +4,14 @@ sidebar_label: Daily/Monthly
 hide_title: true
 ---
 
-## Active Users Daily/Monthly
+import ActivityActiveUsersDailyMonthly from '@site/static/img/metrics/Activity-ActiveUsersDailyMonthly.png';
 
+
+## Daily Over Monthly Active Users
 
 "Daily Over Monthly Active Users" is a ratio or percentage that measures the relative engagement level of users with a chatbot on a daily basis compared to their engagement over a monthly timeframe. This metric helps businesses understand how actively users are engaging with the chatbot on a daily basis in relation to their monthly interaction patterns. 
 
-Here's how to interpret the Daily Over Monthly Active Users ratio for a chatbot:
+   <img src={ActivityActiveUsersDailyMonthly } alt="ActivityActiveUsersDailyMonthly" />
 
 
 ### Key Components
@@ -17,6 +19,7 @@ Here's how to interpret the Daily Over Monthly Active Users ratio for a chatbot:
 #### Daily Active Users (DAU) 
 
 The number of distinct users who interact with the chatbot at least once within a single day.
+
 #### Monthly Active Users (MAU)
 
 The number of distinct users who interact with the chatbot at least once within a calendar month.
@@ -75,6 +78,10 @@ Chatbot developers and marketers track the ratio to monitor trends and adjust st
 
 The ratio can inform decisions regarding user retention and engagement strategies, especially when observing trends in daily and monthly engagement.
 
-Content and Feature Enhancements: Businesses can use fluctuations in the ratio as a signal to consider content updates or feature improvements.
+#### Content and Feature Enhancements
+
+Businesses can use fluctuations in the ratio as a signal to consider content updates or feature improvements.
+
+### Summary
 
 In summary, Daily Over Monthly Active Users is a metric that measures the intensity of daily engagement with a chatbot relative to monthly engagement. It is valuable for assessing overall performance, understanding user behavior, and making data-driven decisions to optimize user engagement strategies.

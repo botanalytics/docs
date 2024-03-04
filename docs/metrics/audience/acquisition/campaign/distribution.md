@@ -4,9 +4,18 @@ sidebar_label: Distribution
 hide_title: true
 ---
 
+import AcquisitonCampaignDistribution from '@site/static/img/metrics/Acquisiton-CampaignDistribution.png';
+
+
 ## Acquisition Campaign Distribution
 
-An Acquisition Campaign Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different marketing campaigns or initiatives in a horizontal format. It provides a clear view of how many users were acquired through each campaign, allowing for easy comparison and identification of the most effective campaigns in terms of driving user engagement with the chatbot. Here's an explanation of the key elements and significance of an Acquisition Campaign Horizontal Distribution Bar Graph:
+An Acquisition Campaign Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different marketing campaigns or initiatives in a horizontal format. It provides a clear view of how many users were acquired through each campaign, allowing for easy comparison and identification of the most effective campaigns in terms of driving user engagement with the chatbot.
+
+   <img src={AcquisitonCampaignDistribution} alt="AcquisitonCampaignDistribution" />
+
+
+
+ Here's an explanation of the key elements and significance of an Acquisition Campaign Horizontal Distribution Bar Graph:
 
 ### Key Elements
 
@@ -71,5 +80,7 @@ The data informs decisions about where to allocate resources and budget for user
 #### Adaptation to Trends
 
 Data from the graph can guide the adaptation of marketing strategies to match evolving user acquisition trends and preferences.
+
+### Summary
 
 In summary, an Acquisition Campaign Horizontal Distribution Bar Graph for a chatbot visually presents the distribution of user acquisition across different marketing campaigns, helping businesses make data-driven decisions about resource allocation and campaign optimization in a horizontal format.

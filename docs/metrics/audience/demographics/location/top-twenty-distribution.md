@@ -4,9 +4,18 @@ sidebar_label: Top Twenty Distribution
 hide_title: true
 ---
 
+import DemographicsLocationTop20 from '@site/static/img/metrics/Demographics-LocationTop20.png';
+
+
 ## Demographics Location Top Twenty Distribution
 
-A Demographics Top Twenty Location Horizontal Distribution Graph for a chatbot is a visual representation that displays the geographical distribution of users based on their locations in a horizontal format. This specific graph focuses on the top twenty locations with the highest user counts or percentages. It provides a concise view of where the most users are located, allowing for quick identification of prominent regions. Here's an explanation of the key elements and significance of this type of graph:
+A Demographics Top Twenty Location Horizontal Distribution Graph for a chatbot is a visual representation that displays the geographical distribution of users based on their locations in a horizontal format. This specific graph focuses on the top twenty locations with the highest user counts or percentages. It provides a concise view of where the most users are located, allowing for quick identification of prominent regions. 
+
+
+   <img src={DemographicsLocationTop20} alt="DemographicsLocationTop20" />
+
+
+Here's an explanation of the key elements and significance of this type of graph:
 
 ### Key Elements
 
@@ -71,5 +80,7 @@ Businesses can allocate resources and support efforts to regions with a high con
 #### User Engagement
 
 It helps in personalizing user engagement strategies based on regional preferences and trends.
+
+### Summary
 
 In summary, a Demographics Top Twenty Location Horizontal Distribution Graph for a chatbot provides a concise view of the geographical distribution of users in the top twenty locations with the highest user counts or percentages. It's a valuable tool for regional targeting, localization, and resource allocation decisions.

@@ -4,13 +4,31 @@ sidebar_label: Message Volume by Channel
 hide_title: true
 ---
 
+import MessageVolumebyChannel from '@site/static/img/metrics/MessageVolumebyChannel.png';
+
+
 ## Message Volume by Channel
 
-A "Message Volume by Channel" horizontal bar graph for the current week in a chatbot analytics dashboard displays the distribution of messages across various communication channels and integration channels specifically for the ongoing week. Here's an explanation of this dynamic graph:
+A "Message Volume by Channel" horizontal bar graph for the current week in a chatbot analytics dashboard displays the distribution of messages across various communication channels and integration channels specifically for the ongoing week.
+
+   <img src={MessageVolumebyChannel} alt="MessageVolumebyChannel" />
+
+
+
+ Here's an explanation of this dynamic graph:
 
 ### Y-Axis (Channels and Integration Channels)
 
-On the Y-axis, you have a list of communication channels and integration channels. These include channels like Facebook Messenger, Amazon Alexa, Google Assistant, Samsung Bixby, and integration channels such as Microsoft Bot Framework, Rasa, and others. These represent the mediums through which users interact with the chatbot.
+On the Y-axis, you have a list of communication channels and integration channels, including:
+
+- Facebook Messenger
+- Amazon Alexa
+- Google Assistant
+- Samsung Bixby
+- Microsoft Bot Framework
+- Rasa and Others.
+
+These represent the mediums through which users interact with the chatbot.
 
 ### X-Axis (Number of Messages) 
 
@@ -49,5 +67,7 @@ If you've run specific campaigns or promotions during the week, you can assess t
 #### User Engagement
 
 Identifying channels with low message volumes during the week may warrant efforts to boost user engagement on those channels.
+
+### Summary
 
 In summary, a Message Volume by Channel horizontal bar graph for the current week provides an up-to-date view of message distribution across various communication channels and integration platforms. This information is invaluable for making real-time decisions related to resource allocation, user engagement, and overall chatbot performance enhancement.

@@ -4,9 +4,17 @@ sidebar_label: Distribution
 hide_title: true
 ---
 
+import DemographicsGenderdistribution from '@site/static/img/metrics/Demographics-Genderdistribution.png';
+
+
 ## Demographics Gender Distribution
 
-A Demographics Gender Distribution Horizontal Bar Graph is a visual representation that displays the distribution of users across different gender categories in a horizontal format. It provides a clear view of the gender makeup of your user base. Here's an explanation of the key elements and significance of such a graph, including the categories you mentioned:
+A Demographics Gender Distribution Horizontal Bar Graph is a visual representation that displays the distribution of users across different gender categories in a horizontal format. It provides a clear view of the gender makeup of your user base. 
+
+   <img src={DemographicsGenderdistribution} alt="DemographicsGenderdistribution" />
+
+
+Here's an explanation of the key elements and significance of the graph:
 
 ### Key Elements
 
@@ -24,23 +32,10 @@ The length of each bar corresponds to the number or percentage of users falling 
 
 ### Gender Categories
 
-In your question, you mentioned four gender categories:
-
-#### Male
-
-Users who identify as male.
-
-#### Female
-
-Users who identify as female.
-
-#### Non-binary
-
-Users who identify as non-binary, which is a gender identity that doesn't fit within the traditional categories of male or female.
-
-#### Undefined
-
-Users whose gender identity is undefined or not specified.
+- **Male**: Users who identify as male.
+- **Female**: Users who identify as female.
+- **Non-binary**: Users who identify as non-binary, which is a gender identity that doesn't fit within the traditional categories of male or female.
+- **Undefined**: Users whose gender identity is undefined or not specified.
 
 ### Significance and Usage
 
@@ -88,4 +83,6 @@ Understanding your user base's gender distribution can influence product feature
 
 Demonstrating a commitment to inclusivity and diversity in your user base can have a positive impact on your brand image.
 
-In summary, a Demographics Gender Distribution Horizontal Bar Graph displays the distribution of users across different gender categories, including traditional categories like male and female, as well as more inclusive categories like non-binary and undefined. It provides valuable insights for audience targeting, product development, and demonstrating inclusivity.
+### Summary
+
+In summary, a Demographics Gender Distribution Horizontal Bar Graph displays the distribution of users across different gender categories, including traditional categories like male and female, as well as more inclusive categories like non-binary and undefined. It provides valuable insights for audience targeting, product development, and demonstrating inclusivity.  

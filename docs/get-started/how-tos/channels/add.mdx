@@ -2,147 +2,109 @@
 sidebar_position: 1
 ---
 
-import Dashboard from '@site/static/img/dashboard.png';
-import GoToProjectList from '@site/static/img/projects/go-to-list.png';
-import ProjectSettings from '@site/static/img/projects/settings.png';
-import ProjectSettingsChannelsTab from '@site/static/img/projects/channels-tab.png';
-import ProjectSettingsConnectANewChannel from '@site/static/img/projects/settings-channels.png';
-import ShowAddedChannel from '@site/static/img/projects/show-added.png';
-import ChannelAddedApiKey from '@site/static/img/projects/show-api-token.png';
-import ChannelCopyApiKey from '@site/static/img/projects/copy-api-token.png';
-import ProjectMenuIcon from '@site/static/img/projects/menu-icon.png';
-import SettingsSelect from '@site/static/img/projects/settings-select.png';
-import Channel from '@site/static/img/projects/settings-add-channel.png';
-import ChannelList from '@site/static/img/projects/channels.png';
+
+
+import DashboardActiveProject from '@site/static/img/projects/dashboardactiveproject.png';
+import DashboardClickProjectSettings from '@site/static/img/projects/dashboard-clickprojectsettings.png';
+import ChannelsChannelsTab from '@site/static/img/projects/channels-channelstab.png';
+import ChannelConnectNew from '@site/static/img/projects/channel-connectnew.png';
+import ChannelClickSelect from '@site/static/img/projects/channel-clickselect.png';
+import ChannelSelectAmazon from '@site/static/img/projects/channel-selectamazon.png';
+import ChannelClickAdd from '@site/static/img/projects/channel-clickadd.png';
+import ChannelConnectedView from '@site/static/img/projects/channel-connectedview.png';
+import ProjectClickLogo from '@site/static/img/projects/project-clicklogo.png';
+import ProjectViewTile from '@site/static/img/projects/project-viewtile.png';
+import ProjectClickEllipsis from '@site/static/img/projects/project-clickellipsis.png';
+import ProjectClickSettings  from '@site/static/img/projects/project-clicksettings.png';
 
 # Add a Channel to a Project
 
-## Method 1: Adding a channel from the Dropdown Menu
+## There are two methods for adding a channel to a project:
+
+## Method 1: Adding a Channel from the Accounts Dashboard
+
+### Access Dropdown Menu
+
+- In your account dashboard, locate the name of your active project.
+  - Click on the project name to access the dropdown menu.
+    <img src={DashboardActiveProject} alt="Dashboard Active Project" />
 
 ### Access Project Settings
 
-In your account dashboard, you will see the name of your active project.
-Click on the project name to access the dropdown menu.
-
-<img src={Dashboard} alt="Dashboard" />
-
-### Click on "Project Settings"
-
-From the drop-down menu, click on "Project Settings" to access the settings page for the active project.
-
-<img src={ProjectSettings} alt="Project Settings" />
+- On the dropdown menu, click on Project settings to take you to the project settings page.
+  <img src={DashboardClickProjectSettings} alt="Dashboard Click Project Settings" />
 
 ### Navigate to Channels
 
-In the settings window, you will see different sections, including "General" and "Channels."
-Click on "Channels" to manage your connected channels.
-
-<img src={ProjectSettingsChannelsTab} alt="Project Settings Channels Tab" />
+- In the settings window, you will see different sections, including "General" and "Channels."
+  - Click on "Channels" to manage your connected channels.
+    <img src={ChannelsChannelsTab} alt="ChannelsChannelsTab" />
 
 ### Connect New Channel
 
-Under the "Channels" section, click on the "Connect New Channel" button.
-
-<img src={ProjectSettingsConnectANewChannel} alt="Project Settings Connect a New Channel" />
+- Under the "Channels" section, click on the "Connect New Channel" button.
+  <img src={ChannelConnectNew} alt="Channel Connect New" />
 
 ### Choose Your Preferred Channel
 
- A new window will appear, displaying a list of available channels.
-
- <img src={ChannelList} alt="Channel List" />
+- A new window will appear.
+  - Click on select channel to display a list of available channels.
+    <img src={ChannelClickSelect} alt="Channel Click Select" />
+  - Select your preferred channel from the list.
+    <img src={ChannelSelectAmazon} alt="Channel Select Amazon" />
 
 ### Add Channel
 
- Select your preferred channel from the list, and click on 'Add channel.'
-
-<img src={Channel} alt="Project Settings Add Channel" />
+- Then Click on 'Add Channel'
+  <img src={ChannelClickAdd} alt="Channel Click Add" />
 
 ### Channel Added and Displayed
 
-Congratulations! You have successfully added a new channel to Botanalytics. The newly added channel will now be connected to your project, and you can start tracking and analyzing data related to that channel.
+- After selecting the channel, it will be displayed in the "Channels" window.
+  <img src={ChannelConnectedView} alt="Channel Connect View" />
 
-After selecting the channel, it will be displayed in the "Channels" window.
-
-<img src={ShowAddedChannel} alt="Show Added Channel" />
-
-### View Unique API Key
-
-To view the unique API key for the selected channel, click on the channel's name or icon.
-
-<img src={ChannelAddedApiKey} alt="Project Settings Show Channel Api Key" />
-
-### Copy API Key
-
-You can click on the "Copy" button to copy the API key to your clipboard. 
-
-<img src={ChannelCopyApiKey} alt="Project Settings Copy Channel Api Key" />
-
-## Method 2: Adding a channel from the Projects Dashboard
+## Method 2: Adding a Channel from the Projects Dashboard
 
 ### Access the Dashboard
 
-After logging in, click on the Botanalytics logo in the top left corner to access the Projects dashboard.
+- Click on the Botanalytics logo in the top left corner to access the Projects dashboard.
+  <img src={ProjectClickLogo} alt="Project Click Logo" />
 
-<img src={GoToProjectList} alt="Go to Project List" />
+### Access Project Settings
 
-### Access Channel Settings
-
- In the Projects dashboard, choose the project you want to add a new channel to.
- Click on the three dots (ellipsis) icon in the top right corner to display a drop-down menu.
-
- <img src={ProjectMenuIcon} alt="Project Menu" />
-
-From the drop-down menu, select "Settings."
-
-<img src={SettingsSelect} alt="Project Settings" />
-
+- In the Projects dashboard, locate the project you want to add a new channel to.
+  <img src={ProjectViewTile} alt="Projects View Tile" />
+  - Click on the three dots (ellipsis) icon in the top right corner to display a drop-down menu.
+    <img src={ProjectClickEllipsis} alt="Project Click Ellipsis" />
+  - From the drop-down menu, select "Settings."
+    <img src={ProjectClickSettings} alt="Rename Project Click Settings" />
 
 ### Navigate to Channels
 
- In the settings window, you will see different sections, including "General" and "Channels."
-Click on "Channels" to manage your connected channels.
-
-<img src={ProjectSettingsChannelsTab} alt="Project Settings Channels Tab" />
-
+- In the settings window, you will see different sections, including "General" and "Channels."
+  - Click on "Channels" to manage your connected channels.
 
 ### Connect New Channel
 
-Under the "Channels" section, click on the "Connect New Channel" button.
-
-<img src={ProjectSettingsConnectANewChannel} alt="Project Settings Connect a New Channel" />
-
+- Under the "Channels" section, click on the "Connect New Channel" button.
+  <img src={ChannelsChannelsTab} alt="ChannelsChannelsTab" />
 
 ### Choose Your Preferred Channel
 
- A new window will appear, displaying a list of available channels.
-
- <img src={ChannelList} alt="Channel List" />
+- A new window will appear.
+  - Click on select channel to display a list of available channels.
+    <img src={ChannelClickSelect} alt="Channel Click Select" />
+  - Select your preferred channel from the list.
+    <img src={ChannelSelectAmazon} alt="Channel Select Amazon" />
 
 ### Add Channel
 
-Select your preferred channel from the list, and click on 'Add channel.'
-
-<img src={Channel} alt="Project Settings Add Channel" />
+- Then Click on 'Add Channel'
+  <img src={ChannelClickAdd} alt="Channel Click Add" />
 
 ### Channel Added and Displayed
 
-Congratulations! You have successfully added a new channel to Botanalytics. The newly added channel will now be connected to your project, and you can start tracking and analyzing data related to that channel.
-
-After selecting the channel, it will be displayed in the "Channels" window.
-
-<img src={ShowAddedChannel} alt="Show Added Channel" />
-
-
-### View Unique API Key
-
- To view the unique API key for the selected channel, click on the channel's name or icon.
-
-<img src={ChannelAddedApiKey} alt="Project Settings Show Channel Api Key" />
-
-### Copy API Key
-
-You can click on the "Copy" button to copy the API key to your clipboard. 
-
-<img src={ChannelCopyApiKey} alt="Project Settings Copy Channel Api Key" />
+- After selecting the channel, it will be displayed in the "Channels" window.
+  <img src={ChannelConnectedView} alt="Channel Connect View" />
 
 

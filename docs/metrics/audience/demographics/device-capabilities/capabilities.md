@@ -3,6 +3,13 @@ sidebar_position: 1
 sidebar_label: Circle Pie
 hide_title: true
 ---
+import DeviceCapabiltiesWebBrowser from '@site/static/img/metrics/DeviceCapabilties-WebBrowser.png';
+import DeviceCapabiltiesVideo from '@site/static/img/metrics/DeviceCapabilities-Video.png';
+import DeviceCapabiltiesScreen from '@site/static/img/metrics/DeviceCapabilities-Screen.png';
+import DeviceCapabiltiesAudio from '@site/static/img/metrics/DeviceCapabilities-Audio.png';
+import DeviceCapabiltiesCharacterdisplay from '@site/static/img/metrics/DeviceCapabilities-Characterdisplay.png';
+
+
 
 ## Demographics Device Capabilities
 
@@ -16,7 +23,33 @@ The primary element of the graph is a circular chart divided into segments, with
 
 #### Categories
 
-The categories listed in the chart include `Screen`, `Audio`, `Video`, `Web Browser`, and `Character Display`.
+The categories listed in the chart include 
+
+#### Screen
+
+   <img src={DeviceCapabiltiesScreen} alt="DeviceCapabiltiesScreen" />
+
+
+####  Audio
+
+   <img src={DeviceCapabiltiesAudio} alt="DeviceCapabiltiesAudio" />
+
+
+####  Video
+
+   <img src={DeviceCapabiltiesVideo} alt="DeviceCapabiltiesVideo" />
+
+
+ #### Web Browser
+
+   <img src={DeviceCapabiltiesWebBrowser} alt="DeviceCapabiltiesWebBrowser" />
+
+
+ #### Character Display.
+
+
+   <img src={DeviceCapabiltiesCharacterdisplay} alt="DeviceCapabiltiesCharacterdisplay" />
+
 
 #### Percentages
 
@@ -32,17 +65,17 @@ Users can interact with the chart by selecting a specific category (e.g., Screen
 
 When a category is selected, the chart displays percentages for two subcategories:
 
-##### Has [Capability]
-This percentage represents the portion of users within the selected category who possess the specified capability (e.g., "Has Screen").
-##### No [Capability]
-This percentage represents the portion of users within the selected category who do not possess the specified capability (e.g., "No Screen").
+- **Has [Capability]**: This percentage represents the portion of users within the selected category who possess the specified capability (e.g., "Has Screen").
+- **No [Capability]**: This percentage represents the portion of users within the selected category who do not possess the specified capability (e.g., "No Screen").
 
 ### Significance and Usage
 
 #### Device Capability Insights
+
 The chart provides insights into the device capabilities of chatbot users and how they are distributed across different categories.
 
 #### User Experience Customization
+
 Chatbot developers can use this data to customize the user experience based on the available device capabilities. For example, if a user has a screen, the chatbot might provide visual content, whereas for users without a screen, it may focus on audio interactions.
 
 #### Feature Prioritization
@@ -50,6 +83,7 @@ Chatbot developers can use this data to customize the user experience based on t
 Businesses can prioritize the development of chatbot features based on the prevalence of specific device capabilities among users.
 
 #### Content Adaptation
+
 Understanding device capabilities helps in adapting content and responses to ensure a seamless and relevant user experience.
 
 ### Challenges and Considerations
@@ -59,24 +93,31 @@ Understanding device capabilities helps in adapting content and responses to ens
 Ensure that the data on device capabilities is accurate and up-to-date to make informed decisions.
 
 #### Privacy
+
 Handle user device capability data with care, respecting user privacy and data protection regulations.
 
-#### Segmentation 
+#### Segmentation
 
 Consider how the data is segmented and whether additional categories or subcategories need to be included for a more detailed analysis.
 
 ### Use Cases
 
 #### User Experience Optimization
+
 Developers can use this data to optimize the chatbot's user experience for different device capabilities.
 
 #### Content Strategy
+
 It informs decisions about the type of content and media formats to use in interactions.
 
 #### Product Development
+
 Businesses can use this information to guide the development of new features or platforms for the chatbot.
 
 #### Accessibility
+
 Ensuring that the chatbot is accessible to users with various device capabilities is an important consideration.
+
+### Summary
 
 In summary, a Device Capabilities Circle Pie Chart for a chatbot displays the distribution of user device capabilities across different categories and allows users to explore the percentages of users with and without specific capabilities within each category. It's a valuable tool for understanding and optimizing the user experience based on device capabilities.

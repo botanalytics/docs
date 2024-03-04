@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import useBaseUrl from '@docusaurus/useBaseUrl';
-//import RunInPostmanButton from '../components/RunInPostmanButton';
 import Head from '@docusaurus/Head';
 
 
@@ -14,12 +13,12 @@ const LazyStoplight = React.lazy(() => import("../components/stoplight"));
 
 export default function APIElement() {
   return (
-      <BrowserOnly>
-        {() => (
-          <Suspense fallback={Fallback}>
-            <LazyStoplight apiDescriptionUrl={useBaseUrl('/api/v2.yaml')}/> 
-          </Suspense>
-        )}
-      </BrowserOnly>
+    <BrowserOnly>
+      {() => (
+        <Suspense fallback={Fallback}>
+          <LazyStoplight apiDescriptionUrl={useBaseUrl('/api/v2.yaml')}/> 
+        </Suspense>
+      )}
+    </BrowserOnly>
   );
 }

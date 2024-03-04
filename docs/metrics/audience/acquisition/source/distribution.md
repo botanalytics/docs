@@ -4,32 +4,41 @@ sidebar_label: Distribution
 hide_title: true
 ---
 
-## Acquisition Source Distribution
+import AcquisitionSourceDistribution from '@site/static/img/metrics/Acquisition-SourceDistribution.png';
 
-An Acquisition Source Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different sources or channels in a horizontal format. It provides a clear view of how many users were acquired through each source, allowing for easy comparison and identification of the most effective acquisition channels for the chatbot. Here's an explanation of the key elements and significance of an Acquisition Source Horizontal Distribution Bar Graph:
+
+## Acquisition Source Horizontal Distribution Bar Graph
+
+An Acquisition Source Horizontal Distribution Bar Graph for a chatbot is a visual representation that displays the distribution of user acquisition across different sources or channels in a horizontal format. It provides a clear view of how many users were acquired through each source, allowing for easy comparison and identification of the most effective acquisition channels for the chatbot. 
+
+   <img src={AcquisitionSourceDistribution} alt="AcquisitionSourceDistribution" />
+
+
+
 
 ### Key Elements
 
 #### Horizontal Bars
 
-The graph consists of horizontal bars, with each bar representing a specific acquisition source or channel.
+Each horizontal bar represents a specific acquisition source or channel.
 
 #### Source Labels
 
 Beside each bar, there is typically a label or name representing the corresponding acquisition source.
 
 #### Bar Length 
+
 The length of each bar corresponds to the number of users acquired through that source. Longer bars represent more users acquired, while shorter bars represent fewer users.
 
 ### Significance and Usage
 
 #### Visual Comparison
 
-The horizontal bar graph allows for a visual comparison of the effectiveness of different acquisition sources or channels in terms of user acquisition. You can quickly identify which sources have driven the most users to the chatbot.
+The horizontal bar graph allows for a visual comparison of the effectiveness of different acquisition sources or channels in terms of user acquisition.
 
 #### Identify High-Performing Sources
 
-Sources associated with the longest bars are considered high-performing, indicating that they are successful in attracting users.
+Longer bars indicate high-performing sources, which are successful in attracting users to the chatbot.
 
 #### Resource Allocation
 
@@ -37,13 +46,13 @@ Insights from the graph can help in allocating marketing resources and budget to
 
 #### Source Optimization
 
-By analyzing the distribution, marketers can make data-driven decisions to optimize underperforming sources and allocate more resources to high-performing ones.
+Marketers can make data-driven decisions to optimize underperforming sources and allocate more resources to high-performing ones based on the distribution.
 
 ### Challenges and Considerations
 
 #### Data Accuracy
 
-Ensure that data tracking mechanisms accurately attribute users to the correct acquisition sources or channels. Proper tracking and analytics tools are essential.
+Ensure that data tracking mechanisms accurately attribute users to the correct acquisition sources or channels.
 
 #### Source Naming
 
@@ -51,24 +60,26 @@ Source labels should be clear and consistent to avoid confusion when interpretin
 
 #### Limited Space
 
-Depending on the number of acquisition sources, there may be limited horizontal space on the graph. It's important to choose a suitable graph format to accommodate all relevant sources.
+Choose a suitable graph format to accommodate all relevant sources without cluttering the graph.
 
 ### Use Cases
 
 #### Marketing Strategy Optimization
 
-Marketing teams use Acquisition Source Horizontal Distribution Bar Graphs to identify the most effective acquisition sources or channels and allocate resources accordingly.
+Identify the most effective acquisition sources or channels and allocate resources accordingly to optimize marketing strategies.
 
 #### Source Assessment
 
-Businesses assess the success of specific acquisition sources or channels by analyzing how many users each source has contributed.
+Assess the success of specific acquisition sources or channels by analyzing how many users each source has contributed.
 
 #### Resource Allocation
 
-The data informs decisions about where to allocate resources and budget for user acquisition, ensuring optimal ROI for different sources.
+Inform decisions about resource allocation and budget for user acquisition to ensure optimal ROI for different sources.
 
 #### Adaptation to Trends 
 
-Data from the graph can guide the adaptation of marketing strategies to match evolving user acquisition trends and preferences.
+Adapt marketing strategies based on evolving user acquisition trends and preferences indicated by the graph.
 
-In summary, an Acquisition Source Horizontal Distribution Bar Graph for a chatbot visually presents the distribution of user acquisition across different sources or channels, helping businesses make data-driven decisions about resource allocation and source optimization in a horizontal format.
+### Summary
+
+In summary, an Acquisition Source Horizontal Distribution Bar Graph visually presents the distribution of user acquisition across different sources or channels, aiding businesses in making informed decisions about resource allocation and source optimization in a horizontal format.
